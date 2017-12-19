@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Chez Dine</title>
+	<!--custom CSS-->
+	<link rel="stylesheet" type="text/css" href="ChezdineCSS/chezdine_style.css">
+	<!--for icons-->
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> 
+    <!-- jQuery library(necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>	
+	<!-- Latest compiled JavaScript -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src=" https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<style>
+
+	</style>
+
+	
+<script>
+$(document).ready(function () {              
+        evenpanels();
+});
+
+
+$(window).resize(function () { 
+     clearHeight();                      
+        evenpanels();
+});
+
+function clearHeight(){
+        $(".profileBody").each(function(){
+            $(this).css('height',"");           // clear height values
+        });  
+}
+
+function evenpanels() {
+
+	var heights = [];                           // make an array
+    $(".profileBody").each(function(){           // copy the height of each
+        heights.push($(this).height());         //   element to the array
+    });
+	console.log("load evenpanels");
+    heights.sort(function(a, b){return b - a}); // sort the array high to low
+    var minh = heights[0];                      // take the highest number    
+    $(".profileBody").height(minh);              // and apply that to each element
+}
+
+</script>
+</head>
+<body>
+<script>
+	evenpanels();
+</script>
+	<!-- navigation-->
+	<div id="NavBar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#CDNavBar" aria-expanded="false">
+					<span class="sr-only">Toggle Navigation Bar</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html#header" class="navbar-brand">
+					<img src="images/LogoCDWB.png">
+				</a>
+			</div>
+			<div class="navbar-collapse collapse" id="CDNavBar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html#header">Home<span class="sr-only">Current Page</span></a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> About Chez Dine<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="index.html#AboutUs" target="_self">About Us</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#popup">Services</a></li>
+								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="teamMembers.html" target="_blank">Our Team</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#popup"><i class="fa fa-question-circle-o" aria-hidden="true"></i>&nbsp; FAQ &nbsp;<i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
+							</ul>
+					</li>
+					<li><a href="#" data-toggle="modal" data-target="#popup">Blog</a></li>
+					<li><a class="EM" data-toggle="modal" data-target="#popup">Becoming a host</a></li>
+					<!--<li><a class="EM" data-toggle="modal" data-target="#hostOptions">Becoming a host</a></li>-->
+					<li><a href="https://chez-dine1.sharetribe.com/en/user_feedbacks/new">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- end Navigation -->
+
+	<div class="popup">
+		<div class="modal fade" id="popup" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"> &times;</button>
+						<h4>Thank you for visiting Chez Dine</h4>
+					</div>
+					<div class="modal-body">
+						<p>We are still busy putting the final touches on our site. 
+						Please email us at <strong>dine@chezdine.com</strong> for more information and personal service.
+						Thank you for your patience.</p>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+<!--modal hostOptions -->			
+	<div class="hostOptions">
+		<div class="modal fade" id="hostOptions" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"> &times;</button>
+						<h4>Before registering as a host, please choose one of the following:</h4>	
+					</div>
+						<iframe src="modal.html"></iframe>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<!--end modal hostOptions -->
+<!--Header-->
+	<div class="header" id="header">
+		<div class="container">
+			<div class="row">	
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<br><br><br><br><br><br>
+					<!--<img class="HeaderLogo" src="images/LogoCDWB.png">-->	
+						<div class="button-group" role="group" aria-label="Registration buttons">
+						<button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#popup">Book a Meal</button>										
+						<button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#popup">Becoming a Host</button>
+						<!--<button type="button" class="btn btn-lg btn-primary" onclick="window.location.href='https://chez-dine1.sharetribe.com/'">Book a Meal</button>										
+						<button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#hostOptions">Becoming a Host</button>	-->									
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+<!--end Header -->
+		<button class="btn btn-lg floatBook" type="button" data-toggle="modal" data-target="#popup"> <i class="fa fa-envelope-open-o" aria-hidden="true"></i> &nbsp;BOOK NOW!</button>
+		<!--<button class="btn btn-lg floatBook" type="button" onclick="window.location.href='https://chez-dine1.sharetribe.com/'">BOOK NOW!</button> -->
+
+<!--About Us-->
+	<div id="AboutUs" class="AboutUs">
+		<div class="container">
+			<h2>About Us</h2>
+			<iframe src="https://www.youtube.com/embed/yBfFR6Kz02E" frameborder="0" allowfullscreen></iframe>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sd-12 col-xs-12">
+					<br><br>	
+					<p>ChezDine is connecting people in the sharing economy with the unity of a meal. 
+					What does that mean? We like to think of ourselves as the newborn baby of Airbnb and Uber. 
+					You can stay in a strangers home, drive in a strangers car and now with ChezDine you can eat in a strangers home. 
+					ChezDine connects foodies with in-home dining options as well as restaurant choices . 
+					Check out our marketplace and search for a variety of dining options We are very proud to building a community that is engaged, 
+					sharing, and delicious.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="panel">
+<!--					<div class="panel-heading">
+						</div> -->
+						<div class="panel-body">
+							<img class="image-responsive" src="images/becomeAGuest.jpg">
+							<h4>Become a guest</h4>					
+							<p>Do you love dining out and meeting new people ?  Chez Dine has taken your love for dining and home cooks love for cooking and infused them together. 
+								Now you can book a meal in a strangers home, or pick up take out, or book a private party for you and your guests. </p>					
+						</div>
+						<div class="panel-footer">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup">Register as a Guest</button>										
+							<!--<button type="button" class="btn btn-primary" onclick="window.location.href='https://chez-dine1.sharetribe.com/'">Register as a Guest</button>		-->								
+						</div>					
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="panel">
+
+						<div class="panel-body">
+							<img  class="image-responsive" src="images/beAHost.jpeg">
+							<h4>Become a Host</h4>				
+							<p>Do you love to cook and want to share your art and hospitality with others ? We invite; cooks, chefs, homemakers, foodies, 
+								hospitality lovers anyone that loves the kitchen and is great in it, to apply to be a Host with Chez Dine. Set your own menu, schedule and dining experiences . 
+								Join us in one of a kind culinary experiences ! </p>					
+						</div>
+						<div class="panel-footer">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup">Becoming a Host</button>															
+							<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#hostOptions" disabled>Becoming a Host</button>	-->														
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="panel">
+
+						<div class="panel-body">
+							<img  class="image-responsive" src="images/restaurantVenue.jpg">
+							<h4>Restaurant &amp; Venues</h4>						
+							<p>Subscribe your restaurant or venue to Chez Dine. We will promote your culinary specialities, highlight your specials, events and provide unlimited listings . 
+							Chez Dine is happy to help you fill your empty seats !</p>						
+						</div>
+						<div class="panel-footer">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup">Subscribe</button>																						
+							<!--<button type="button" class="btn btn-primary" onclick="window.location.href='https://bookwith.chezdine.com/en/listings/493954-listing-for-restaurants'" disabled>Subscribe</button>	-->																					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--end About Us -->
+<!-- Our community in action Slider-->
+ 
+	<div class="carouselSlide">
+		<h2>Highlight Reel - Our Community in Action</h2>
+		<div id="chezdineCarousel" class="carousel slide" data-ride="carousel">
+		<!-- carousel indicators-->
+			<ol class="carousel-indicators">
+				<li data-target="#chezdineCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#chezdineCarousel" data-slide-to="1"></li>
+				<li data-target="#chezdineCarousel" data-slide-to="2"></li>
+				<li data-target="#chezdineCarousel" data-slide-to="3"></li>
+				<li data-target="#chezdineCarousel" data-slide-to="4"></li>
+				<li data-target="#chezdineCarousel" data-slide-to="5"></li>
+				<li data-target="#chezdineCarousel" data-slide-to="6"></li>
+			</ol>
+
+			<div class="carousel-inner" role="listbox">
+				<!-- first picture (active) displayed -->
+				<div class="item active">
+					<img class="image-responsive" src="images/HighlightReel/IMG_7540.jpg">
+				</div>
+				<!-- end active-->
+				<div class="item">
+					<img class="image-responsive" src="images/HighlightReel/IMG_7651.jpg">
+				</div>
+				<div class="item">
+					<img class="image-responsive" src="images/HighlightReel/cookForYou.jpg">
+				</div>
+				<div class="item">
+					<img class="image-responsive" src="images/HighlightReel/IMG_20170501_203338_705.jpg">
+				</div> 
+				<div class="item">
+					<img class="image-responsive" src="images/HighlightReel/confirmation.jpg">
+				</div>
+				<div class="item">
+					<img class="image-responsive" src="images/HighlightReel/tobias.jpg">
+				</div>
+				<div class="item">
+					<img class="image-responsive" src="images/HighlightReel/IMG_7688.jpg">
+				</div>
+			</div>
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#chezdineCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#chezdineCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>  
+	</div>
+<!--end our community in action slider-->
+
+<!--Host Profiles-->
+ 	<div id="HostProfile" class="HostProfile">
+		<h2>Meet our community</h2>
+		<div class="container">
+			<h3>In home hosts</h3>
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="Host panel panel-deafult profileBody">					
+						<div class="panel-heading">
+							<h3>Blair, M</h3>
+							<img src="images/Blair.jpg" class="img-responsive img-circle">
+						</div>
+						<div class="panel-body ">
+							<b>Pastry Chef with bursting bold flavours </b>
+						</div>
+						<div class="panel-footer">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup">See Host's Profile</button>
+						<!--	<button type="button" class="btn btn-primary" onclick="">See Host's Profile</button> -->
+						</div>						
+					</div>
+				</div>
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="Host  panel panel-deafult profileBody">	
+							<div class="panel-heading">
+								<h3>Sean, D</h3>
+								<img src="images/SeanDavis.jpg" class="img-responsive img-circle">
+							</div>
+							<div class="panel-body ">
+								<b>Finance businessman, master chef Canada runner up and Leaf fan!</b>
+							</div>
+							<div class="panel-footer">
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup">See Host's Profile</button>
+								<!--<button type="button" class="btn btn-primary" >See Host's Profile</button>-->
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="Host panel panel-deafult profileBody">	
+							<div class="panel-heading">
+								<h3>Heather, V M </h3>
+								<img src="images/Heather.jpg" class="img-responsive img-circle">
+							</div>
+							<div class="panel-body ">
+								<b>Cook at Google, who loves the fact that the internet and table have finally come together ! </b>
+							</div>
+							<div class="panel-footer">
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup">See Host's Profile</button>
+							<!--	<button type="button" class="btn btn-primary">See Host's Profile</button> -->
+							</div>
+						</div>
+					</div>				
+			</div>
+		</div>
+	</div>
+	
+	<button type="button" class="btn btn-link moreHost" data-toggle="modal" data-target="#popup">More In Home Host Profiles</button>
+<!--	<button type="button" class="btn btn-link moreHost">More In Home Host Profiles</button> -->
+	
+	<div class="RestaurantProfile" id="RestaurantProfile"> 
+		<div class="container">
+			<h3>Restaurants & Venues</h3>
+			<div class="row">
+				<div class="col-lg-4 col-md-4  col-sm-4">
+					<div class="RVHost panel panel-deafult profileBody">					
+						<div class="panel-heading">
+							<h3>Stonewalls</h3>
+							<b>Restaurant & Live Music Venue</b>
+						</div>
+						<div class="panel-body ">
+							<img src="images/stonewalls.png " class="img-responsive img-rounded">
+						</div>
+						<div class="panel-footer">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup" >See Profile</button>
+							<!--<button type="button" class="btn btn-primary" onclick="" >See Profile</button>-->
+						</div>						
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4  col-sm-4">
+					<div class="RVHost panel panel-deafult profileBody">					
+						<div class="panel-heading">
+							<h3>Aberdeen Tavern</h3>
+							<b>One part bitters, two parts love <i class="fa fa-heart" aria-hidden="true" style="color:red;"></i> </b>
+						</div>
+						<div class="panel-body ">
+							<img src="images/AberdeenTavern.png" class="img-responsive img-rounded">
+						</div>
+						<div class="panel-footer">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup" >See Profile</button>
+						</div>						
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4  col-sm-4">
+					<div class="RVHost panel panel-deafult profileBody">					
+						<div class="panel-heading">
+							<h3>Radius</h3>
+							<b></b>
+						</div>
+						<div class="panel-body ">
+							<img src="images/radius.jpeg" width="220px" class="img-responsive img-rounded">
+						</div>
+						<div class="panel-footer">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup" >See Profile</button>
+						</div>						
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+	<button type="button" class="btn btn-link moreRestaurant" data-toggle="modal" data-target="#popup">More Restaurant & Venue Profiles</button>
+
+<!-- End Host Profile-->
+<br><br>
+<!-- Reviews Session-->
+	<div id="Reviews" class="Reviews">
+		<div class="container">
+			<div class="row">
+				<h2>Stories of Taste of Togetherness</h2>
+				<div class="col-lg-6 col-md-6">
+					<div class="testimonial">
+						<div class="media-body">
+							<blockquote><p>People who love to eat, are always the best people and Chez Dine 
+							is the perfect tool for connecting us. The taste of togetherness is 
+							an experience not only to please our taste buds but to nurture our souls. 
+							We had the pleasure of hosting a Farm to Barn City Limits dinner with Chez Dine 
+							in the summer. We are foodies and loved sharing our passion, property and 
+							purpose with likeminded new friends</p>
+							<footer> Stephanie</footer>
+							</blockquote>
+						</div>
+						<div class="media-right media-top">
+							<img src="images/stephanie.png">	
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="testimonial">
+						<div class="media-body">
+							<blockquote><p>I heard about Chez Dine through a friend. I was a little nervous about going to 
+							a strangers house for dinner. Not really knowing what to expect. However I'm sure I 
+							recall feeling the same way when I stayed at my first Airbnb. I took a friend along 
+							for security and courage and away we went. We choose an Thai experience. We ended up 
+							being around a table with five other people we had never met. I was a bit shy at first, 
+							only talking to my friend . However everyone at the table got along so well. The food I 
+							could go on about all day. The attention to detail, texture and taste was amazing. The 
+							host David isn't from Thailand but lived there for a short time. His stories were so 
+							interesting . I highly recommend David and Chez Dine!</p>
+							<footer>Amanda</footer>
+							</blockquote>			
+						</div>
+						<div class="media-right media-top">
+							<img src="images/Amanda.jpg">	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+	</div>
+<!--end of reviews--> 
+<!-- Partners Session-->
+	<div class="Partners" id="Partners">
+		<div class="container">
+			<div class="row">
+				<h4>Featured on</h4>
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+					<li><a href="https://theforge.mcmaster.ca/company/chezdine/"><img src="images/theForge.gif"></a></li>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+					<li><img src="images/snapd.jpg"></li>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+					<li><a href="https://www.pressreader.com/canada/the-hamilton-spectator/20170719/281852938623703"><img src="images/pressreader.png"></a></li>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+					<li><img src="images/THESpec.png"></li>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+					<li><img src="images/CHCH.gif"></li>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+					<li><a href="http://openroll.org/093-chez-dine-new-sharing-experience-jen/"><img src="images/OpenRoll.jpg"></a></li>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--End Partners session -->
+<!-- footer -->
+	<div class="footer" id="footer">
+		<div class="contaner">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 contactChezDine">
+					<h4>Contact Us</h4>
+					<p><i class="fa fa-home" aria-hidden="true"></i>  3-231 Main St W , Hamilton ON L8P 1J4</p>
+					<p><i class="fa fa-envelope-open-o" aria-hidden="true"></i> dine@chezdine.com</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> 1(289)921-1789</p>
+					<p><i class="fa fa-globe" aria-hidden="true"></i> www.chezdine.com</p>		
+				</div> 
+			
+				<div class="col-lg-4 col-md-4 aboutChezDine">
+					<h4>About</h4>
+						<p><a href="#"data-toggle="modal" data-target="#popup">FAQ</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Services</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Meet Our Team</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup"> Private Privacy</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Terms & Condition</a></p>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<h4>Stay in touch with us</h4>				
+					<a href = "https://www.facebook.com/chezdine/" target="blank">
+						<i class="social fa fa-facebook-official" aria-hidden="true"></i>
+					</a>
+					<a href="https://twitter.com/chez_dine?lang=en" target="blank">
+						<i class="social fa fa-twitter-square" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.instagram.com/chezdine/" target="blank">
+						<i class="social fa fa-instagram" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.youtube.com/playlist?list=UUAFC-ThxZ4HgS1BaYwlQFWg" target="blank">
+						<i class="social fa fa-youtube-square" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+<!-- end footer -->
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Chez Dine</title>
+	<!--custom CSS-->
+	<link rel="stylesheet" type="text/css" href="ChezdineCSS/chezdine_style.css">
+	<!--for icons-->
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> 
+    <!-- jQuery library(necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>	
+	<!-- Latest compiled JavaScript -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src=" https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--JS script-->
+	<script>
+	$(document).ready(function(){
+
+			loadGallery(true, 'a.gallery-item');
+			
+			function disableBottons(counterMax, counterCurrent){
+				$('#show-next, #show-prev').show();
+				if(counterMax == counterCurrent){
+					$('#show-next').hide();
+				}else if(counterCurrent == 1){
+					$('#show-prev').hide();
+				}
+			}
+		
+		
+			function loadGallery(setID, setClickAttr){
+				var currentImg, 
+					selector, 
+					counter=0;
+				
+				$('#show-next, #show-prev').click(function(){
+					if($(this).attr('id') == 'show-next'){
+						currentImg ++;
+					}else{
+						currentImg --;
+					}
+				
+					selector = $('[data-image-id="'+currentImg+'"]');
+					updateGallery(selector);
+				});
+			
+		
+				function updateGallery(selector){
+					var $sel = selector;
+					currentImg = $sel.data('image-id');
+					$('#gallery-item-caption').text($sel.data('caption'));
+					$('#gallery-item-title').text($sel.data('title'));
+					$('#gallery-item').attr('src',$sel.data('image'));
+					disableBottons(counter, $sel.data('image-id'));
+				}
+			
+				if(setID == true){
+					$('[data-image-id]').each(function(){
+						counter++;
+						$(this).attr('data-image-id',counter);
+					});
+				}
+				$(setClickAttr).on('click', function(){
+					updateGallery($(this));
+				});
+			};
+
+		$(".filter-button").click(function(){
+			var value = $(this).attr('data-filter');
+			
+			if(value == "all")
+			{
+
+				$('.filter').show('1000');
+			}
+			else
+			{
+			   $(".filter").not('.'+value).hide('3000');
+				$('.filter').filter('.'+value).show('3000');
+				
+			}
+		});
+		
+		if ($(".filter-button").removeClass("active")) {
+	$(this).removeClass("active");
+	}
+	$(this).addClass("active");
+
+	});
+	</script>
+<	<style>
+		.img-thumbnail{
+			object-fit: cover !important;
+			width: 720px;
+			height: 240px;
+		}
+		
+		.modal-body img{
+			display:block;
+			margin:auto;
+		}
+		
+	</style>
+	
+</head>
+<body>
+	<!-- navigation-->
+	<div id="NavBar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#CDNavBar" aria-expanded="false">
+					<span class="sr-only">Toggle Navigation Bar</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html#header" class="navbar-brand">
+					<img src="images/LogoCDWB.png">
+				</a>
+			</div>
+			<div class="navbar-collapse collapse" id="CDNavBar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html#header">Home<span class="sr-only">Current Page</span></a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> About Chez Dine<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="index.html#AboutUs" target="_self">About Us</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#popup">Services</a></li>
+								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="teamMembers.html" target="_blank">Our Team</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#popup"><i class="fa fa-question-circle-o" aria-hidden="true"></i>&nbsp; FAQ &nbsp;<i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
+							</ul>
+					</li>
+					<li><a href="#" data-toggle="modal" data-target="#popup">Blog</a></li>
+					<li><a class="EM" data-toggle="modal" data-target="#popup">Becoming a host</a></li>
+					<!--<li><a class="EM" data-toggle="modal" data-target="#hostOptions">Becoming a host</a></li>-->
+					<li><a href="https://chez-dine1.sharetribe.com/en/user_feedbacks/new">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- end Navigation -->
+
+	<div class="popup">
+		<div class="modal fade" id="popup" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"> &times;</button>
+						<h4>Thank you for visiting Chez Dine</h4>
+					</div>
+					<div class="modal-body">
+						<p>We are still busy putting the final touches on our site. 
+						Please email for more information and personal service.
+						Thank you for your patience.</p>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+<!--modal hostOptions -->			
+	<div class="hostOptions">
+		<div class="modal fade" id="hostOptions" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"> &times;</button>
+						<h4>Before registering as a host, please choose one of the following:</h4>	
+					</div>
+						<iframe src="modal.html"></iframe>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<!--end modal hostOptions -->
+
+		<button class="btn btn-lg floatBook" type="button" data-toggle="modal" data-target="#popup">BOOK NOW!</button>
+		<!--<button class="btn btn-lg floatBook" type="button" onclick="window.location.href='https://chez-dine1.sharetribe.com/'">BOOK NOW!</button> -->
+
+
+<!--Gallery-->
+	<div class="container">
+		<div class="row">
+			<div class="gallery col-*-12">
+				<h1 class="gallery-title">Delightful Chez Dine Experience</h1>
+				<h2>Our Community in Action!</h2>
+			</div>
+		</div>
+	</div>
+<!-- Photos buttons-->
+	<div class="container galleryfilter">
+		<div class="row">
+			<div align="center">
+				<button class="btn btn-default filter-button" data-filter="all">All</button>
+				<button class="btn btn-default filter-button" data-filter="event1">City Limits - Farm to Barn</button>
+				<button class="btn btn-default filter-button" data-filter="event2">Vinyl Diner</button>
+				<button class="btn btn-default filter-button" data-filter="event3">Great Northern Battery, BBQ (private catered event)</button>
+				<button class="btn btn-default filter-button" data-filter="event4">Cook for you</button>
+				<button class="btn btn-default filter-button" data-filter="event5">Poetry Potluck</button>
+				<button class="btn btn-default filter-button" data-filter="event6">Confirmation (private catered event)</button>
+				
+			</div>	
+		</div>
+	</div>
+	
+	<br><br>
+	
+<!-- end of Photos buttons -->
+<!-- Photos -->
+<!-- City Limits -->
+	<div class="container-fluid galleryImages">
+		<div class="row">
+			<div class="col filter event1">
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 1" data-caption="City Limits Photo 1" data-image="images/gallery/CityLimits/IMG_7643.jpg">
+						<img src="images/gallery/CityLimits/IMG_7643.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p1</p>
+			</div>
+			<div class="col filter event1">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 2" data-caption="City Limits Photo 2" data-image="images/gallery/CityLimits/IMG_7644.jpg">
+						<img src="images/gallery/CityLimits/IMG_7644.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p2</p>
+			</div>
+			<div class="col filter event1">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 3" data-caption="City Limits Photo 3" data-image="images/gallery/CityLimits/IMG_7653.jpg">
+						<img src="images/gallery/CityLimits/IMG_7653.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p3</p>
+			</div>
+			<div class="col filter event1">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 4" data-caption="City Limits Photo 4" data-image="images/gallery/CityLimits/IMG_7658.jpg">
+						<img src="images/gallery/CityLimits/IMG_7658.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p4</p>
+			</div>
+			<div class="col filter event1">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 5" data-caption="City Limits Photo 5" data-image="images/gallery/CityLimits/IMG_7669.jpg">
+						<img src="images/gallery/CityLimits/IMG_7669.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p5</p>
+			</div>
+			<div class="col filter event1">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 6" data-caption="City Limits Photo 6" data-image="images/gallery/CityLimits/IMG_7672.jpg">
+						<img src="images/gallery/CityLimits/IMG_7672.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p6</p>
+			</div>
+			<div class="col filter event1">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 7" data-caption="City Limits Photo 7" data-image="images/gallery/CityLimits/IMG_7691.jpg">
+						<img src="images/gallery/CityLimits/IMG_7691.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p7</p>
+			</div>
+			<div class="col filter event1">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 8" data-caption="City Limits Photo 8" data-image="images/gallery/CityLimits/IMG_7699.jpg">
+						<img src="images/gallery/CityLimits/IMG_7699.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p8</p>
+			</div>
+			<div class="col filter event1">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 9" data-caption="City Limits Photo 9" data-image="images/gallery/CityLimits/IMG_7701.jpg">
+						<img src="images/gallery/CityLimits/IMG_7701.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p9</p>
+			</div>
+			<div class="col filter event1">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 10" data-caption="City Limits Photo 10" data-image="images/gallery/CityLimits/IMG_7712.jpg">
+						<img src="images/gallery/CityLimits/IMG_7712.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p10</p>
+			</div>
+			<div class="col filter event1">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="City Limits Photo 11" data-caption="City Limits Photo 11" data-image="images/gallery/CityLimits/IMG_7715.jpg">
+						<img src="images/gallery/CityLimits/IMG_7715.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>p11</p>
+			</div>
+<!-- Vinyl Diner-->
+
+			<div class="col filter event2">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Vinyl Diner 1" data-caption="Vinyl Diner 1" data-image="images/gallery/VinylDiner/VinylDiner.png">
+						<img src="images/gallery/VinylDiner/VinylDiner.png" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pv1</p>
+			</div>
+
+<!-- Great Northern Battery BBQ -->
+
+			<div class="col filter event3">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="BBQ 1" data-caption="BBQ 1" data-image="images/gallery/BBQ/IMG_7728.jpg">
+						<img src="images/gallery/BBQ/IMG_7728.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pB1</p>
+			</div>
+			<div class="col filter event3">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="BBQ 2" data-caption="BBQ 2" data-image="images/gallery/BBQ/IMG_7731.jpg">
+						<img src="images/gallery/BBQ/IMG_7731.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pB2</p>
+			</div>
+			<div class="col filter event3">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="BBQ 3" data-caption="BBQ 3" data-image="images/gallery/BBQ/IMG_7734.jpg">
+						<img src="images/gallery/BBQ/IMG_7734.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pB3</p>
+			</div>
+			<div class="col filter event3">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="BBQ 4" data-caption="BBQ 4" data-image="images/gallery/BBQ/IMG_7745.jpg">
+						<img src="images/gallery/BBQ/IMG_7745.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pB4</p>
+			</div>
+			<div class="col filter event3">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="BBQ 5" data-caption="BBQ 5" data-image="images/gallery/BBQ/IMG_7750.jpg">
+						<img src="images/gallery/BBQ/IMG_7750.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pB5</p>
+			</div>
+
+<!-- Cook For You -->
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 1" data-caption="Cook For You 1" data-image="images/gallery/CookForYou/20171021_171217.jpg">
+						<img src="images/gallery/CookForYou/20171021_171217.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY1</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 2" data-caption="Cook For You 2" data-image="images/gallery/CookForYou/20171021_184948.jpg">
+						<img src="images/gallery/CookForYou/20171021_184948.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY2</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 3" data-caption="Cook For You 3" data-image="images/gallery/CookForYou/20171021_185443.jpg">
+						<img src="images/gallery/CookForYou/20171021_185443.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY3</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 4" data-caption="Cook For You 4" data-image="images/gallery/CookForYou/20171021_185910.jpg">
+						<img src="images/gallery/CookForYou/20171021_185910.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY4</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 5" data-caption="Cook For You 5" data-image="images/gallery/CookForYou/20171021_191341.jpg">
+						<img src="images/gallery/CookForYou/20171021_191341.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY5</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 6" data-caption="Cook For You 6" data-image="images/gallery/CookForYou/20171021_201220.jpg">
+						<img src="images/gallery/CookForYou/20171021_201220.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY6</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 7" data-caption="Cook For You 7" data-image="images/gallery/CookForYou/20171021_213202.jpg">
+						<img src="images/gallery/CookForYou/20171021_213202.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY7</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 8" data-caption="Cook For You 8" data-image="images/gallery/CookForYou/20171021_220321.jpg">
+						<img src="images/gallery/CookForYou/20171021_220321.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY8</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 9" data-caption="Cook For You 9" data-image="images/gallery/CookForYou/20171021_220331.jpg">
+						<img src="images/gallery/CookForYou/20171021_220331.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY9</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 10" data-caption="Cook For You 10" data-image="images/gallery/CookForYou/20171021_222239.jpg">
+						<img src="images/gallery/CookForYou/20171021_222239.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY10</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 11" data-caption="Cook For You 11" data-image="images/gallery/CookForYou/20171021_224714.jpg">
+						<img src="images/gallery/CookForYou/20171021_224714.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY11</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 12" data-caption="Cook For You 12" data-image="images/gallery/CookForYou/20171021_230808.jpg">
+						<img src="images/gallery/CookForYou/20171021_230808.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY12</p>
+			</div>
+			<div class="col filter event4">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Cook For You 13" data-caption="Cook For You 13" data-image="images/gallery/CookForYou/20171022_000717.jpg">
+						<img src="images/gallery/CookForYou/20171022_000717.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pCFY13</p>
+			</div>
+
+<!-- Poetry Potluck -->
+			<div class="col filter event5">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Poetry Potluck 1" data-caption="Poetry Potluck 1" data-image="images/gallery/PoetryPotluck/20170929_191324.jpeg">
+						<img src="images/gallery/PoetryPotluck/20170929_191324.jpeg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pPP1</p>
+			</div>
+			<div class="col filter event5">
+	
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Poetry Potluck 2" data-caption="Poetry Potluck 2" data-image="images/gallery/PoetryPotluck/20170929_191343.jpg">
+						<img src="images/gallery/PoetryPotluck/20170929_191343.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pPP2</p>			
+			</div>
+			<div class="col filter event5">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Poetry Potluck 3" data-caption="Poetry Potluck 3" data-image="images/gallery/PoetryPotluck/20170929_192845.jpg">
+						<img src="images/gallery/PoetryPotluck/20170929_192845.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pPP3</p>
+			</div>
+			<div class="col filter event5">
+	
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Poetry Potluck 4" data-caption="Poetry Potluck 4" data-image="images/gallery/PoetryPotluck/20170929_193807.jpg">
+						<img src="images/gallery/PoetryPotluck/20170929_193807.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pPP4</p>				
+			</div>
+			<div class="col filter event5">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Poetry Potluck 5" data-caption="Poetry Potluck 5" data-image="images/gallery/PoetryPotluck/20170929_194313.jpg">
+						<img src="images/gallery/PoetryPotluck/20170929_194313.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pPP5</p>	
+			</div>
+
+<!-- Confirmation -->
+			<div class="col filter event6">
+	
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 1" data-caption="Confirmation 1" data-image="images/gallery/Confirmation/20171111_141541.jpg">
+						<img src="images/gallery/Confirmation/20171111_141541.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc1</p>		
+			</div>
+			<div class="col filter event6">
+		
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 2" data-caption="Confirmation 2" data-image="images/gallery/Confirmation/20171111_141543.jpg">
+						<img src="images/gallery/Confirmation/20171111_141543.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc2</p>			
+			</div>
+			<div class="col filter event6">
+			
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 3" data-caption="Confirmation 3" data-image="images/gallery/Confirmation/20171111_144038.jpg">
+						<img src="images/gallery/Confirmation/20171111_144038.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc3</p>			
+			</div>
+			<div class="col filter event6">
+
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 4" data-caption="Confirmation 4" data-image="images/gallery/Confirmation/20171111_144347.jpg">
+						<img src="images/gallery/Confirmation/20171111_144347.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc4</p>
+			</div>
+			<div class="col filter event6">
+		
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 5" data-caption="Confirmation 5" data-image="images/gallery/Confirmation/20171111_144656.jpg">
+						<img src="images/gallery/Confirmation/20171111_144656.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc5</p>				
+			</div>
+			<div class="col filter event6">
+			
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 6" data-caption="Confirmation 6" data-image="images/gallery/Confirmation/20171111_144659.jpg">
+						<img src="images/gallery/Confirmation/20171111_144659.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc6</p>				
+			</div>
+			<div class="col filter event6">
+			
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 7" data-caption="Confirmation 7" data-image="images/gallery/Confirmation/20171111_145209.jpg">
+						<img src="images/gallery/Confirmation/20171111_145209.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc7</p>				
+			</div>
+			<div class="col filter event6">
+			
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 8" data-caption="Confirmation 8" data-image="images/gallery/Confirmation/20171111_145705.jpg">
+						<img src="images/gallery/Confirmation/20171111_145705.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc8</p>				
+			</div>
+			<div class="col filter event6">
+			
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 9" data-caption="Confirmation 9" data-image="images/gallery/Confirmation/20171111_151152.jpg">
+						<img src="images/gallery/Confirmation/20171111_151152.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc9</p>				
+			</div>
+			<div class="col filter event6">
+				
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 10" data-caption="Confirmation 10" data-image="images/gallery/Confirmation/20171111_151157.jpg">
+						<img src="images/gallery/Confirmation/20171111_151157.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc10</p>				
+			</div>
+			<div class="col filter event6">
+				
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 11" data-caption="Confirmation 11" data-image="images/gallery/Confirmation/20171111_151413.jpg">
+						<img src="images/gallery/Confirmation/20171111_151413.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc11</p>				
+			</div>
+			<div class="col filter event6">
+	
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 12" data-caption="Confirmation 12" data-image="images/gallery/Confirmation/20171111_153459.jpg">
+						<img src="images/gallery/Confirmation/20171111_153459.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc12</p>				
+			</div>
+			<div class="col filter event6">
+			
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 13" data-caption="Confirmation 13" data-image="images/gallery/Confirmation/20171111_184445.jpg">
+						<img src="images/gallery/Confirmation/20171111_184445.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc13</p>				
+			</div>
+			<div class="col filter event6">
+		
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 14" data-caption="Confirmation 14" data-image="images/gallery/Confirmation/20171111_184455.jpg">
+						<img src="images/gallery/Confirmation/20171111_184455.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc14</p>			
+			</div>
+			<div class="col filter event6">
+			
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 15" data-caption="Confirmation 15" data-image="images/gallery/Confirmation/20171111_185054.jpg">
+						<img src="images/gallery/Confirmation/20171111_185054.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc15</p>				
+			</div>
+			<div class="col filter event6">
+			
+					<a class="gallery-item" href="#" data-image-id="" data-toggle="modal" data-target="#photoModal" data-title="Confirmation 16" data-caption="Confirmation 16" data-image="images/gallery/Confirmation/20171111_191200.jpg">
+						<img src="images/gallery/Confirmation/20171111_191200.jpg" class="img-responsive img-thumbnail img-rounded">
+					</a>
+					<p>pc16</p>			
+			</div>
+		</div>
+	</div>
+
+
+<!-- end of Photos -->
+	
+	<div class="modal fade" id="photoModal" tabindex=-1 role="dialog" aria-labelledby="Gallery Photos" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="gallery-item-title"></h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<img id="gallery-item" class="img-responsive" src="">
+				</div>
+				<div class="modal-footer">
+					<div class="col-md-2">
+						<button type="button" id="show-prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</button>
+					</div>
+					<div class="col-md-8 text-center" id="gallery-item-caption">
+						Image descriptions
+					</div>
+					<div class="col-md-2">
+						<button type="button" id="show-next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--End gallery-->
+<!-- footer -->
+	<div class="footer" id="footer">
+		<div class="contaner">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 contactChezDine">
+					<h4>Contact Us</h4>
+					<p><i class="fa fa-home" aria-hidden="true"></i>  3-231 Main St W , Hamilton ON L8P 1J4</p>
+					<p><i class="fa fa-envelope-open-o" aria-hidden="true"></i> dine@chezdine.com</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> 1(289)921-1789</p>
+					<p><i class="fa fa-globe" aria-hidden="true"></i> www.chezdine.com</p>		
+				</div> 
+			
+				<div class="col-lg-4 col-md-4 aboutChezDine">
+					<h4>About</h4>
+						<p><a href="#"data-toggle="modal" data-target="#popup">FAQ</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Services</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Meet Our Team</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup"> Private Privacy</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Terms & Condition</a></p>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<h4>Stay in touch with us</h4>				
+					<a href = "https://www.facebook.com/chezdine/" target="blank">
+						<i class="social fa fa-facebook-official" aria-hidden="true"></i>
+					</a>
+					<a href="https://twitter.com/chez_dine?lang=en" target="blank">
+						<i class="social fa fa-twitter-square" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.instagram.com/chezdine/" target="blank">
+						<i class="social fa fa-instagram" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.youtube.com/playlist?list=UUAFC-ThxZ4HgS1BaYwlQFWg" target="blank">
+						<i class="social fa fa-youtube-square" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+<!-- end footer -->
+
+</body>
+</html>

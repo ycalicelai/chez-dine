@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Chez Dine</title>
+	<!--custom CSS-->
+	<link rel="stylesheet" type="text/css" href="ChezdineCSS/chezdine_style.css">
+	<!--for icons-->
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> 
+    <!-- jQuery library(necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>	
+	<!-- Latest compiled JavaScript -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src=" https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<script>
+		function hideAll(){
+			for (var i =1; i<=8 ; i++){
+				$('#commonAns'+i).hide();
+				$('#guestAns'+i).hide();	
+				$('#hostAns'+i).hide();	
+				$('#RestaurantAns'+i).hide();				
+			}		
+
+		}
+		
+		$(document).ready(function(){	
+		hideAll();	
+		loadQuestions();
+		})
+
+		function loadQuestions(){
+			$(".filter").hide();
+			$(".FAQfilter-button").click(function()
+				{
+					//$('.commonQuestions').hide('3000');
+					var value = $(this).attr('data-filter');
+					$(".filter").not('.'+value).hide('3000');
+					switch(value){
+						case"guest":
+							$('.guestFAQ').show('1000');					
+						break;
+						case"host":
+							$('.hostFAQ').show('1000');					
+						break;
+						case"restaurant":
+							$('.restaurantFAQ').show('1000');					
+						break;
+						default:
+						break;
+					}
+				});
+		}	
+		
+		function showAns(role,qNo){
+
+			switch(role){
+				case'c': $('#commonAns'+qNo).toggle(300);
+				case'g': $('#guestAns'+qNo).toggle(300);
+				break;
+				case'h': $('#hostAns'+qNo).toggle(300);
+				break;				
+				case'r': $('#RestaurantAns'+qNo).toggle(300);
+				break;				
+				default: hideAll();
+			}
+
+		}		
+
+	</script>
+ 
+	
+</head>
+<body>
+	<!-- navigation-->
+	<div id="NavBar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html#header" class="navbar-brand">
+					<img src="images/LogoCDShadowIn.png">
+				</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.html#header">Home</a></li>
+				<li class="hidden-sm"><a href="index.html#AboutUs">About Us</a></li>
+				<li class="hidden-sm"><a href="index.html#chezdineCarousel">Our Community in Action</a></li>
+				<li class="hidden-sm"><a href="index.html#HostProfile">Meet Our Hosts</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a class="EM" data-toggle="modal" data-target="#hostOptions">Becoming a host</a></li>
+				<li><a href="https://chez-dine1.sharetribe.com/en/user_feedbacks/new">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- end Navigation -->
+<!--modal hostOptions -->			
+	<div class="hostOptions">
+		<div class="modal fade" id="hostOptions" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"> &times;</button>
+						<h4>Before registering as a host, please choose one of the following:</h4>	
+					</div>
+						<iframe src="modal.html"></iframe>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<!--end modal hostOptions -->
+
+<!-- FAQ -->
+	<div class="FAQ">
+		<h2>FAQ</h2>
+		<br>
+		<div class="container">
+			<div class="row">
+				<!-- Common Questions -->
+				<h3> Common Questions</h3>
+				<div class="commonQuestions col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="list-group questionList">
+						<div class="list-group-item-heading" id="commonQ1" onclick=showAns('c',1)>
+							<h4>Question 1C</h4>
+							<p>CSed fringilla mauris sit amet nibh.</p>	
+						</div> 
+						<div class="list-group-item-text" id="commonAns1">
+							<p >CAnswer:1Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa.</p>		
+						</div>
+					</div>
+					<div class="list-group questionList">
+						<div class="list-group-item-heading" id="commonQ2" onclick=showAns('c',2)>
+							<h4> Question 2C</h4>
+							<p>CSed fringilla mauris sit amet nibh.</p>	
+						</div> 
+						<div class="list-group-item-text" id="commonAns2">
+							<p >CAnswer:2Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa.</p>		
+						</div>
+					</div>
+					<div class="list-group questionList">
+						<div class="list-group-item-heading" id="commonQ3" onclick=showAns('c',3)>
+							<h4> Question 3C</h4>
+							<p>CSed fringilla mauris sit amet nibh.</p>	
+						</div> 
+						<div class="list-group-item-text" id="commonAns3">
+							<p >CAnswer:3Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa.</p>		
+						</div>
+					</div>
+					<div class="list-group questionList">
+						<div class="list-group-item-heading" id="commonQ4" onclick=showAns('c',4)>
+							<h4> Question 4C</h4>
+							<p>CSed fringilla mauris sit amet nibh.</p>	
+						</div> 
+						<div class="list-group-item-text" id="commonAns4">
+							<p >CAnswer:4Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa.</p>		
+						</div>
+					</div>
+					<div class="list-group questionList">
+						<div class="list-group-item-heading" id="commonQ5" onclick=showAns('c',5)>
+							<h4> Question 5C</h4>
+							<p>CSed fringilla mauris sit amet nibh.</p>	
+						</div> 
+						<div class="list-group-item-text" id="commonAns5">
+							<p >CAnswer:5Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa.</p>		
+						</div>
+					</div>
+					<div class="list-group questionList">
+						<div class="list-group-item-heading" id="commonQ6" onclick=showAns('c',6)>
+							<h4> Question 6C</h4>
+							<p>CSed fringilla mauris sit amet nibh.</p>	
+						</div> 
+						<div class="list-group-item-text" id="commonAns6">
+							<p >CAnswer:6Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa.</p>		
+						</div>
+					</div>
+					<div class="list-group questionList">
+						<div class="list-group-item-heading" id="commonQ7" onclick=showAns('c',7)>
+							<h4> Question 7C</h4>
+							<p>CSed fringilla mauris sit amet nibh.</p>	
+						</div> 
+						<div class="list-group-item-text" id="commonAns7">
+							<p >CAnswer:7Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa.</p>		
+						</div>
+					</div>
+					<div class="list-group questionList">
+						<div class="list-group-item-heading" id="commonQ8" onclick=showAns('c',8)>
+							<h4> Question 8C</h4>
+							<p>CSed fringilla mauris sit amet nibh.</p>	
+						</div> 
+						<div class="list-group-item-text" id="commonAns8">
+							<p >CAnswer:8Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa.</p>		
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">		
+					<p>Looking for answers for some questions? Please pick one of the following:</p>
+					<!-- buttons for choices of role -->
+					<div class="container FAQfilter">
+						<div class="row">
+							<div align="left">
+								<button class="btn btn-default FAQfilter-button" data-filter="guest">As a Guest</button>
+								<button class="btn btn-default FAQfilter-button" data-filter="host">As a host</button>
+								<button class="btn btn-default FAQfilter-button" data-filter="restaurant">As our restaurant partner</button>
+							</div>	
+						</div>
+					</div>
+
+					<!--Guest FAQ -->
+					<div class="filter guestFAQ">
+						<h3> As a Guest</h3>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="guestQ1" onclick=showAns('g',1)>
+								<h4> Question 1</h4>
+								<p>Sed fringilla mauris sit amet nibh.</p>	
+							</div> 
+							<div class="list-group-item-text" id="guestAns1">
+								<p >Answer:1Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="guestQ2" onclick=showAns('g',2)>
+								<h4> Question 2</h4>
+								<p>Sed fringilla mauris sit amet nibh.</p>	
+							</div> 
+							<div class="list-group-item-text" id="guestAns2">
+								<p >Answer:2Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="guestQ3" onclick=showAns('g',3)>
+								<h4> Question 3</h4>
+								<p>Sed fringilla mauris sit amet nibh.</p>	
+							</div> 
+							<div class="list-group-item-text" id="guestAns3">
+								<p >Answer:3Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="guestQ4" onclick=showAns('g',4)>
+								<h4> Question 4</h4>
+								<p>Sed fringilla mauris sit amet nibh.</p>	
+							</div> 
+							<div class="list-group-item-text" id="guestAns4">
+								<p >Answer:4Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="guestQ5" onclick=showAns('g',5)>
+								<h4> Question 5</h4>
+								<p>Sed fringilla mauris sit amet nibh.</p>	
+							</div> 
+							<div class="list-group-item-text" id="guestAns5">
+								<p >Answer:5Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="guestQ6" onclick=showAns('g',6)>
+								<h4> Question 6</h4>
+								<p>Sed fringilla mauris sit amet nibh.</p>	
+							</div> 
+							<div class="list-group-item-text" id="guestAns6">
+								<p >Answer:6Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="guestQ7" onclick=showAns('g',7)>
+								<h4> Question 7</h4>
+								<p>Sed fringilla mauris sit amet nibh.</p>	
+							</div> 
+							<div class="list-group-item-text" id="guestAns7">
+								<p >Answer:7Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="guestQ8" onclick=showAns('g',8)>
+								<h4> Question 8</h4>
+								<p>Sed fringilla mauris sit amet nibh.</p>	
+							</div> 
+							<div class="list-group-item-text" id="guestAns8">
+								<p >Answer:8Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>	
+					</div>
+					<!-- Host FAQ -->
+					<div class="filter hostFAQ">
+						<h3>As a host</h3>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="hostQ1" onclick=showAns('h',1)>
+								<h4> Question 1 - H</h4>
+								<p>Sed fringilla mauris sit amet nibh. - H</p>	
+							</div> 
+							<div class="list-group-item-text" id="hostAns1">
+								<p >Answer:1 - H Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="hostQ2" onclick=showAns('h',2)>
+								<h4> Question 2 - H </h4>
+								<p>Sed fringilla mauris sit amet nibh. - H </p>	
+							</div> 
+							<div class="list-group-item-text" id="hostAns2">
+								<p >Answer:2 - H Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="hostQ3" onclick=showAns('h',3)>
+								<h4> Question 3 - H </h4>
+								<p>Sed fringilla mauris sit amet nibh. - H </p>	
+							</div> 
+							<div class="list-group-item-text" id="hostAns3">
+								<p >Answer:3 - H Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="hostQ4" onclick=showAns('h',4)>
+								<h4> Question 4 - H </h4>
+								<p>Sed fringilla mauris sit amet nibh. - H </p>	
+							</div> 
+							<div class="list-group-item-text" id="hostAns4">
+								<p >Answer:4 - H Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="hostQ5" onclick=showAns('h',5)>
+								<h4> Question 5 - H </h4>
+								<p>Sed fringilla mauris sit amet nibh. - H </p>	
+							</div> 
+							<div class="list-group-item-text" id="hostAns5">
+								<p >Answer:5 - H Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="hostQ6" onclick=showAns('h',6)>
+								<h4> Question 6 - H </h4>
+								<p>Sed fringilla mauris sit amet nibh. - H </p>	
+							</div> 
+							<div class="list-group-item-text" id="hostAns6">
+								<p >Answer:6 - H Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="hostQ7" onclick=showAns('h',7)>
+								<h4> Question 7 - H </h4>
+								<p>Sed fringilla mauris sit amet nibh. - H </p>	
+							</div> 
+							<div class="list-group-item-text" id="hostAns7">
+								<p >Answer:7 - H Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="hostQ8" onclick=showAns('h',8)>
+								<h4> Question 8 - H </h4>
+								<p>Sed fringilla mauris sit amet nibh. - H </p>	
+							</div> 
+							<div class="list-group-item-text" id="hostAns8">
+								<p >Answer:8 - H Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+
+						</div>
+					</div>
+					<!-- Restaurant FAQ-->
+					<div class="filter restaurantFAQ">
+						<h3>As our restaurant partner</h3>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="RestaurantQ1" onclick=showAns('r',1)>
+								<h4> Question 1 - R </h4>
+								<p>Sed fringilla mauris sit amet nibh. - R </p>	
+							</div> 
+							<div class="list-group-item-text" id="RestaurantAns1">
+								<p >Answer:1 - R Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="RestaurantQ2" onclick=showAns('r',2)>
+								<h4> Question 2 - R </h4>
+								<p>Sed fringilla mauris sit amet nibh. - R </p>	
+							</div> 
+							<div class="list-group-item-text" id="RestaurantAns2">
+								<p >Answer:2 - R Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="RestaurantQ3" onclick=showAns('r',3)>
+								<h4> Question 3 - R </h4>
+								<p>Sed fringilla mauris sit amet nibh. - R </p>	
+							</div> 
+							<div class="list-group-item-text" id="RestaurantAns3">
+								<p >Answer:3 - R Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="RestaurantQ4" onclick=showAns('r',4)>
+								<h4> Question 4 - R </h4>
+								<p>Sed fringilla mauris sit amet nibh. - R </p>	
+							</div> 
+							<div class="list-group-item-text" id="RestaurantAns4">
+								<p >Answer:4 - R Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="RestaurantQ5" onclick=showAns('r',5)>
+								<h4> Question 5 - R </h4>
+								<p>Sed fringilla mauris sit amet nibh. - R </p>	
+							</div> 
+							<div class="list-group-item-text" id="RestaurantAns5">
+								<p >Answer:5 - R Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="RestaurantQ6" onclick=showAns('r',6)>
+								<h4> Question 6 - R </h4>
+								<p>Sed fringilla mauris sit amet nibh. - R </p>	
+							</div> 
+							<div class="list-group-item-text" id="RestaurantAns6">
+								<p >Answer:6 - R Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="RestaurantQ7" onclick=showAns('r',7)>
+								<h4> Question 7 - R </h4>
+								<p>Sed fringilla mauris sit amet nibh. - R </p>	
+							</div> 
+							<div class="list-group-item-text" id="RestaurantAns7">
+								<p >Answer:7 - R Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+						<div class="list-group questionList">
+							<div class="list-group-item-heading" id="RestaurantQ8" onclick=showAns('r',8)>
+								<h4> Question 8 - R </h4>
+								<p>Sed fringilla mauris sit amet nibh. - R </p>	
+							</div> 
+							<div class="list-group-item-text" id="RestaurantAns8">
+								<p >Answer:8 - R Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+								Aenean massa.</p>		
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- FAQ--> 
+<!-- footer -->
+	<div class="footer" id="footer">
+		<div class="contaner">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 contactChezDine">
+					<h4>Contact Us</h4>
+					<p><i class="fa fa-home" aria-hidden="true"></i>  245 James Street North, Hamilton, ON </p>
+					<p><i class="fa fa-envelope-open-o" aria-hidden="true"></i> dine@chezdine.com</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> 1(289)921-1789</p>
+					<p><i class="fa fa-globe" aria-hidden="true"></i> www.chezdine.com</p>		
+				</div> 
+			
+				<div class="col-lg-4 col-md-4 aboutChezDine">
+					<h4>About</h4>
+						<p><a href="FAQ.html">FAQ</a></p>
+						<p><a href="services.html">Services</a></p>
+						<p><a href="privatePolicy.html"> Private Privacy</a></p>
+						<p><a href="TermsCondition.html">Terms & Condition</a></p>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<h4>Stay in touch with us</h4>				
+					<a href = "https://www.facebook.com/chezdine/" target="blank">
+						<i class="social fa fa-facebook-official" aria-hidden="true"></i>
+					</a>
+					<a href="https://twitter.com/chez_dine?lang=en" target="blank">
+						<i class="social fa fa-twitter-square" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.instagram.com/chezdine/" target="blank">
+						<i class="social fa fa-instagram" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.youtube.com/playlist?list=UUAFC-ThxZ4HgS1BaYwlQFWg" target="blank">
+						<i class="social fa fa-youtube-square" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+<!-- end footer -->
+  </body>
+</html>

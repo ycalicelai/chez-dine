@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Chez Dine</title>
+	<!--custom CSS-->
+	<link rel="stylesheet" type="text/css" href="ChezdineCSS/chezdine_style.css">
+	<!--for icons-->
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> 
+    <!-- jQuery library(necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>	
+	<!-- Latest compiled JavaScript -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src=" https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<style>
+		h2,h4{
+			text-transformation: uppercase;
+		}
+		.numberList li{
+		padding:5px!important;
+		margin:5px !important;
+		}
+				
+		.alphabetList li{
+		list-style-position: outside !important;
+		padding-left:10px!important;
+		margin-left:20px !important;
+		list-style-type: lower-alpha !important;
+		display: list-item !important;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<!-- navigation-->
+	<div id="NavBar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#CDNavBar" aria-expanded="false">
+					<span class="sr-only">Toggle Navigation Bar</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html#header" class="navbar-brand">
+					<img src="images/LogoCDWB.png">
+				</a>
+			</div>
+			<div class="navbar-collapse collapse" id="CDNavBar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html#header">Home<span class="sr-only">Current Page</span></a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> About Chez Dine<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="index.html#AboutUs" target="_self">About Us</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#popup">Services</a></li>
+								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="teamMembers.html" target="_blank">Our Team</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#popup"><i class="fa fa-question-circle-o" aria-hidden="true"></i>&nbsp; FAQ &nbsp;<i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
+							</ul>
+					</li>
+					<li><a href="#" data-toggle="modal" data-target="#popup">Blog</a></li>
+					<li><a class="EM" data-toggle="modal" data-target="#popup">Becoming a host</a></li>
+					<!--<li><a class="EM" data-toggle="modal" data-target="#hostOptions">Becoming a host</a></li>-->
+					<li><a href="https://chez-dine1.sharetribe.com/en/user_feedbacks/new">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- end Navigation -->
+
+	<div class="popup">
+		<div class="modal fade" id="popup" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"> &times;</button>
+						<h4>Thank you for visiting Chez Dine</h4>
+					</div>
+					<div class="modal-body">
+						<p>We are still busy putting the final touches on our site. 
+						Please email us at <strong>dine@chezdine.com</strong> for more information and personal service.
+						Thank you for your patience.</p>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+<!--modal hostOptions -->			
+	<div class="hostOptions">
+		<div class="modal fade" id="hostOptions" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"> &times;</button>
+						<h4>Before registering as a host, please choose one of the following:</h4>	
+					</div>
+						<iframe src="modal.html"></iframe>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<!--end modal hostOptions -->
+ 
+<!-- Terms and Condition -->
+	<div class="TermsCondition">	
+		<h2>Terms of Use</h2>
+		<h6> Last modified: <strong>Nov 28, 2017</strong></h6>
+		<h6>Effective date: Nov 28, 2017</h6>
+		<ol class="numberList" type="1">
+			<li>
+				<h4> Background</h4>
+				<p>These terms of use (the “<strong>Terms</strong>” or “<strong>Terms of Use</strong>”) govern your access of the child care communication software,
+				whether accessed: (a) on a computer connected to the internet at <u></u><a href="index.html"><i> www.chezdine.com </i></a></u> (the “<strong>Website</strong>”); (b) on <strong><i>Chez Dine </i></strong>
+				social media properties; or (c) by mobile device (individually and collectively, (a), (b), and (c) are the “<strong>Product</strong>”),
+				as owned and operated by <strong><i>Chez Dine</i></strong>, a company located at 3-231 Main St W, Hamilton, ON L8P 1J4 (referred to in these 
+				Terms as “<strong>we</strong>”, “<strong>us</strong>” or the “<strong>Company</strong>”). These Terms govern the use of all persons using the Product, including without 
+				limitation, the account manager or organization who registers an account on the Product (the “<strong>Account Manager</strong>”), 
+				all additional managers, teachers and parents (collectively, along with the Account Manager, “<strong>You</strong>” or the “<strong>User</strong>”),
+				who have registered for the use of the Product, and are binding on any use of the Product, and apply to You from the time 
+				that You access the Product. For clarification, “You” includes terms such as “your” and “yourself”.  </p>
+			</li>
+			<li>
+				<h4>Approval of the terms</h4>
+				<p>It is important that You read these Terms carefully. If You do not agree to these Terms, please do not use the Product or browse the Website. By accessing or using the Product, 
+				You represent, warrant and signify that:  (a) You are at least 18 years of age; (b) You have read, understood and agree to be bound by these Terms as they may be amended from time 
+				to time; and (c) You have read and understand our Privacy Policy, which can be accessed at <a href="index.html"><u><i>http://chezdine.com/</i></u></a> (the "<strong>Privacy Policy</strong>"), the terms of which are incorporated herein by
+				reference, and agree to abide by the Privacy Policy. </p>			
+				<br>
+				<p>You may not use the Product nor accept these Terms if you are not of a legal age to form a binding contract with us. If You accept these Terms, You represent that You have the capacity to be bound by them, 
+				or if You are acting on behalf of a company or entity, that You have the authority to bind such company or entity (and in which case “<strong>You</strong>” will refer to the company or entity).</p>
+			</li>
+			<li>
+				<h4>Amendment</h4>
+				<p>We may add to, discontinue or revise these Terms or any aspect, mode, design, or service provided under the Product, which include but are not limited to the:</p>
+				<ol class="alphabetList" type="a">
+					<li> scope of the features;</li>
+					<li> timing of the features;</li>
+					<li> software/hardware required for access to the Product; and</li>
+					<li> geographic locations or jurisdictions in which certain features may be available.</li>
+				</ol>
+				<br>
+				<p>We may amend the Terms without notice for non-material amendments. In the event of a material change, we will provide the Account Manager with thirty (30) days’ notice of a material change in the Terms and conditions 
+				(including changes in pricing) via e-mail to the e-mail address supplied to us by the Account Manager, setting out: </p>
+				<ol class="alphabetList" type="a">
+					<li>the new or amended agreement terms;</li>
+					<li>how such terms read formerly;</li>
+					<li>the date of the coming into force of the amendment; </li>
+					<li>the means in which You can respond and the effects of not responding; </li>
+					<li>the option to either terminate the agreement or retain the existing agreement unchanged; and</li>
+					<li>the language of this provision with reference to the applicable consumer protection legislation rules for amending these terms and making any additional requirements for amendments as prescribed by law (if any).</li>
+				</ol>
+				<br>
+				<p>It is the Account Manager’s responsibility to send such notices of material changes to all Users associated with the Account Manager’s account. We highly recommend that Users read any amendments carefully. Unless explicit 
+				consent is required by the law, we have the right to assume that You have accepted the change to the terms and conditions, unless You notify us to the contrary, no later than thirty (30) days after the amendment comes into force, 
+				that You desire to cancel the contract or deregister or unsubscribe from access to the Product.  </p>
+				<br>
+				<p>We will post the most current Terms on the Website and your use of the Product will be subject to the most current Terms as posted on the Website at such time. It is your responsibility to visit this page to find any updates 
+				that may have been made to the Terms. You hereby agree that <strong><i>Chez Dine</i></strong> shall not be liable to You, your employee, or any other third party for any amendments to the Terms of Use.  </p>
+			</li>
+			<li>
+				<h4>Payment terms</h4>
+				<p>Payment from Account Managers will be due upon delivery of an electronic invoice from <strong><i>Chez Dine</i> </strong>to the Account Manager monthly, as applicable. Any amounts payable by the Account Manager hereunder which remain unpaid <strong><i>thirty (30)
+				days</i></strong> after an invoice is delivered shall bear interest at the rate of <strong><i>five percent (5%)</i></strong> per month (up to a maximum of <strong><i>fifty percent (50%)</i></strong> per annum), or the maximum amount allowable by law, such interest to be calculated on a daily 
+				basis from the date the payment becomes overdue until the date payment is made in full. </p>
+				<br>
+				<p>Account Managers may be required to provide account information for at least one valid debit or credit card through the Product (“<strong>Debit or Credit Card Information</strong>”). We will use this Debit or Credit Card Information in accordance with this Agreement and our Privacy Policy. </p>
+				<br>
+				<p>We are not liable for any payments that are not completed because: (1) your debit or credit card account does not contain sufficient funds to complete the transactions or the transactions would exceed the credit limit or overdraft protection of the debit or credit card account; 
+				(2) You have not provided us with correct payment account information; (3) your debit or credit card has expired; or (4) of circumstances beyond our control (such as but not limited to, power outages, interruptions of cellular service, overzealous fraud protection rules applied by your payment 
+				card brand or acquirer bank, or any other interface from an outside force). </p>
+				<br>
+				<p>All payment is exclusive of any taxes or duties imposed by jurisdiction tax law. <strong><i>Chez Dine</i></strong> will not be responsible for any taxes or duties owed by You.</p>
+			</li>
+			<li>
+				<h4>Termination</h4>
+				<p>These Terms are effective on the date that You access the Product and will continue to apply until our relationship with You is terminated. Users may terminate their relationship with us by notifying <strong><i>Chez Dine </i></strong>via email at <u><i> dine@chezdine.com </u></i>.4The services provided 
+				by the Product and the applicable fees shall continue until the end of the Account Manager’s current subscription term after the Account Manager has notified us of your desire to unsubscribe from the Product, to close your account, and to cease your use of the Product. Account Managers that use the 
+				Product during a trial period and do not register for the Product after the free trial period will have their account terminated at the end of the free trial period.</p>
+				<br>
+				<p>We may terminate our relationship with You immediately at any time and for any reason including, but not limited to, a breach of these Terms under the following circumstances:</p>
+				<ol class="alphabetList" type="a">
+					<li>if You have not adhered to any or all the provisions of the Terms (such as a failure to pay fees when due) or if it appears that You do not intend to or are unable to comply with the Terms, such determination to be made solely at our discretion;</li>
+					<li>if we have changed our Terms or Privacy Policy and have not received your required consent, subject to the amendment provision in this Agreement; </li>
+					<li>if we are required to terminate the relationship by law; </li>
+					<li>if we receive any notice of your misuse of the Product; or </li>
+					<li>if provision of the Product is no longer commercially viable for us.</li>
+				</ol>
+				<br>
+				<p>Upon termination of our relationship, we will immediately revoke your license to use the Product and block all access to your account, and may delete all data and information associated with your account <strong><i>thirty (30) days</i></strong> after such termination. Upon termination of this relationship,
+				You will remain liable for any accrued charges and amounts which become due for payment prior to or following termination. If you do not log into your account for <strong><i>twelve (12)</i></strong> or more months, we may treat your account as “inactive” and permanently cancel your account upon delivery of 
+				written notice and delete your information <strong><i>[thirty (30)] </i></strong>days after such notice has been delivered. </p>
+			</li>
+			<li>
+				<h4>Use of the product</h4>
+				<p>In order to use the Product, an Account Manager must register using our registration page located at <a href="index.html"><u><i> http://www.chezdine.com/ </i></u></a>. You understand and agree that an employer of your organization may register You for a manager account. Upon registration, the Account Manager may setup additional 
+				accounts on the registered account for managers, teachers and parents.</p>
+				<br>
+				<p><strong><u>Registration Information:</u></strong> You agree and understand that You are responsible for maintaining the confidentiality of your password, which, together with your name and e-mail address (“<strong>User ID</strong>”), allows You to access the Product. The User ID and password, together with any other contact 
+				information You provide us at the time of signing up for the Product form your “<strong>Registration Information</strong>.”  You agree that all Registration Information provided to us will be accurate and up-to-date. You agree to keep your password secure. We will not be liable if we are unable to retrieve or reset 
+				a lost password. If You become aware of any unauthorized use of your password or account, You agree to notify us via e-mail at <u><i>dine@chezdine.com</i></u>  as soon as possible</p>
+				<br>
+				<p><strong><u>Accounts:</u></strong> You may create or use additional accounts for the purpose of logging into the secured account as a manager, teacher and/or parent, as applicable to your role in the managed account. You may not open an account if you are a competitor of Chez Dine</p>
+				<br>
+				<p><strong><u>Permitted Uses: </u></strong> You agree to use the Product only for purposes that are permitted, both by the Terms and by any applicable law, regulation, or generally accepted practices or guidelines, in relevant local, national, and international jurisdictions. You agree to adhere to any applicable privacy of personal 
+				information laws and regulations, including as outlined in the Personal Information Protection and Electronic Documents Act, SC 2000, c 5. </p>
+				<br>
+				<p><strong><u>Unauthorized Access:</u></strong> You agree to only access (or try to access) and use the Product through interfaces provided by us. You shall not access (or try to access) and use the Product through any automated means, including, but not limited to, scrapers, scripts, robots, or web crawlers. 
+				You agree not to use or attempt to use another User’s account. You agree not to impersonate any person or entity, or falsely state or otherwise misrepresent yourself, your personal information, or your affiliations with any person or entity.</p>
+				<br>
+				<p><strong><u>Prohibited Uses:</u></strong> You may use our Website, services, and products only for lawful purposes. You may not use our Website, services, or products in any manner that:</p>
+				<ol class="alphabetList" type="a">
+					<li>breaches any applicable local, national or international law or regulation;</li>
+					<li>may in any way be considered harassment to another person or entity; </li>
+					<li>may in any way, is unlawful or fraudulent, or has any unlawful or fraudulent purpose or effect;</li>
+					<li>may in any way damage, disable, overburden, and/or impair the the Product server, or any network connected to the Product server, and/or interfere with any other party’s use or enjoyment of the Product; </li>
+					<li>is in any way abusive, defamatory, misleading, fraudulent, pornographic or otherwise explicit in nature or written in bad faith;</li>
+					<li>harms or attempts to harm minors in any way;</li>
+					<li>will reproduce, duplicate, copy, sell, resell or exploit any portion of the Product; or</li>
+					<li>will abuse either verbally, physically, written or other abuse (including threats of abuse or retribution) of any Product customers, employees, members, or officers;</li>
+				</ol>
+				<br>
+				<p>and any of the foregoing will result in immediate account termination.</p>
+				<br>
+				<p>You represent and warrant that You will not use the Product to upload, post, link to, email, transmit, or otherwise make available any material that contains software viruses or any other computer code, files or programs designed to interrupt, destroy, or limit the functionality of any computer software or hardware or 
+				any telecommunications equipment. Nor will You post or distribute any computer program that damages, detrimentally interferes with, surreptitiously intercepts, or expropriates any system, data, or personal information. You further represent and warrant that You will not disrupt the functioning of the Website, in any manner.</p>
+				<br>
+				<p><strong><u>Moderation:</u></strong> You understand and agree that although <strong><i> Chez Dine </i></strong> is not required to moderate your use of the Product, it may in its sole judgment review and delete any content in whole or in part, for any reason whatsoever, which without limitation, violate these Terms or which might be offensive, illegal, or that might violate the rights, harm, or threaten the safety of others. </p>
+				<br>
+				<p><strong><u>User Responsibility:</u></strong> You agree that You are solely responsible for any breach of your obligations under the Terms and for the consequences of any such breach. We have no responsibility to you or to any third party for such breaches or the consequences of such breaches (including losses or damage that we may incur).<p>
+				<br>
+				<p>You understand that when using the Product, You may come across material that You find objectionable, offensive or indecent and agree that You are using the Product at your own risk.</p>
+				<br>
+				<p><strong><u>Technical Requirements:</u></strong> Use of the Product requires internet access through your computer. You may be required to have <em> [INSERT TECHNICAL REQUIREMENTS] </em> enabled to use the Product, and some features of the Product may not be accessible with such technologies disabled. </p>
+				<br>
+
+				<h5>PRIVACY</h5>
+				<p>Your privacy is very important to us. Please review our Privacy Policy. Our Privacy Policy applies to the collection, use, disclosure, retention, protection and accuracy of your personal information and business financial information collected for the purposes of the features offered through the Product. </p>
+				<br>
+
+				<h5>THIRD PARTY LINKS</h5>
+					<p>The Product may link to third-party websites or resources. Such links are provided as a convenience to You only and do not imply an endorsement, warranty or guarantee by us of any such linked Website or the company it purports to represent. We do not assume any responsibility or liability for their availability, accuracy, the related content, products or services. You are solely responsible for use of any such websites or resources and compliance with their policies. Should You elect to enter into a binding contract with any such website, You agree to hold us harmless and hereby release us from any liability whatsoever, whether arising out of contract, tort or otherwise, for any liability, claim, injury, loss or damage suffered as a result of your actions or the actions of any user associated with your account, offering to accept or having accepted any products or services that are available from those sites.  </p>
+					<br>
+				<h5>INTELLECTUAL PROPERTY AND RIGHTS</h5>
+					<br>
+					<p><strong><u>Rights to content provided by us:</u></strong> You acknowledge and understand that we own all right, title and interest in: (a) the Product and any associated data files; and (b) all computer software; advertisements; sponsored content; and intellectual property associated with the Product (all such information, individually and collectively, being the “<strong>Product Content </strong>”), which You may have access to when using the Product. </p>
+					<br>
+					<p>Except as set forth in the Agreement, all rights not expressly granted to You are reserved. You agree not to decipher, decompile, disassemble, reconstruct, translate, reverse engineer, or discover any of the intellectual property or ideas, algorithms, file formats, programming, or interoperability interfaces underlying the Product. You may not modify, rent, lease, loan, sell, distribute or create any derivative products or services (or parts of services products or services) based on the Product Content that You do not own or to which You have rights, or to create derivative works based on the Product. You may not infringe upon our intellectual property or adapt, reproduce, publish or distribute copies of any information or material found on the Product in any form (including by e-mail or other electronic means), without our prior written consent.</p>
+					<br>
+					<p>You are not required to provide<strong><i> Chez Dine </i></strong>with any comments, suggestions, recommendations, requests or any other feedback (“<strong>Feedback</strong>”). In the event that you do provide <strong><i> Chez Dine </i></strong>with Feedback,<strong><i> Chez Dine </i></strong>may use such feedback to improve the Product or for any other purpose. Furthermore,<strong><i> Chez Dine </i></strong>shall own such Feedback and<strong><i> Chez Dine </i></strong>and its affiliates, licensees, clients, partners, third-party providers and other authorized entitled may use, license, distribute, reproduce and commercialize the Feedback, and You hereby assign, irrevocably, exclusively and on a royalty-free basis, all such Feedback to<strong><i> Chez Dine </i></strong>. </p>
+					<br>
+					<p><strong><u>Limited license:</u></strong> We grant You a non-exclusive, non-transferable, revocable, limited license to use the Product in accordance with these Terms. This limited license is subject to full payment of the monthly fees per child, when due. This license may be revoked upon breach of these Terms by You and shall automatically be revoked upon termination or expiration of this Agreement.  <p>
+					<br>
+					<p>The Company may, now or in the future, own rights to trade-marks, trade names, services marks, logos, domain names and other distinctive brand features which we use in connection with the operation of the Product (each such feature being a “<strong>Brand Right</strong>” and collectively being the “<strong>Brand Rights</strong>”). We do not grant you any right or license to use any Brand Right other than as expressly set out in these Terms and in other licenses between You and us. </p>
+					<br>
+					<p><strong><u>Rights to content provided by you: </u><i>Chez Dine</i> </strong> does not retain any right, title and interest to the information provided, inputted or uploaded to the Product (“<strong>User Data</strong>”). You understand and agree that the ownership of User Data shall be decided amongst yourself and your employer, if applicable, and that your User Data may be available to your employer even after the termination of your account with the Product. You agree that You will defend, indemnify and hold harmless us and our officers, directors, shareholders, employees, agents and representatives, from and against any and all claims, damages, judgments, liability, costs and expenses (including without limitation any reasonable legal fees), in whole or in part arising out of or attributable to the ownership of User Data. </p>
+					<br>
+					<p>You also understand that in order for us to operate the Product, User Data may be transmitted by You or us over various public networks and in various media in compliance with our security protocols and we may make changes to User Data to meet the technological requirements of such networks and media. You are responsible for ensuring that User Data is protected and your rights in User Data are enforced; we have no responsibility to protect or enforce your rights on your behalf with respect to User Data. </p>
+					<br>
+					<p>At any time and up to<strong><i> thirty (30) </i></strong>days after your termination with<strong><i> Chez Dine</i></strong>, You may request a copy of all of your User Data from the Product (“<strong>Data Dump</strong>”). You understand and agree that after the expiration of<strong><i> thirty (30)</i></strong> days after your termination with <strong><i>Chez Dine</i></strong>, your User Data will be permanently deleted and You will no longer have access to such Data Dump.  </p>
+					<br>
+				<h5>DISCLAIMERS</h5>
+					<br>
+					<p><strong><u>The Product provided as-is:</u></strong> The Product is provided “as-is” without warranties of any kind, either expressed or implied. You acknowledge, agree and understand that You use the Product at your own risk. We will have no responsibility for any harm to your computer system, loss or corruption of data, or other harm that results from your access to or use of the Product. </p>
+					<br>
+					<p><strong><u>Downtime:</u></strong> The Product may be temporarily unavailable from time to time for maintenance or other reasons. We assume no responsibility for any error, inaccuracy, omission, interruption, deletion, defect, delay in operation or transmission, communications line failure, theft or destruction or unauthorized access to, or alteration of, any communications between You and the Product.</p>
+					<br>
+					<p><strong><u>No endorsement as to accuracy:</u></strong> We accept no responsibility for the accuracy of any User Data provided by or created using the Product except as otherwise set out in these Terms. The provision or storage of User Data through the Product does not constitute our endorsement or warranty as to the compliance of such User Data with applicable privacy legislation, nor to the accuracy, timeliness, materiality, completeness, or reliability of such User Data. You are responsible for ensuring that that the information you have entered into our system is accurate, reliable and complete. </p>
+					<br>
+					<p><strong><u>Ratings and reviews:</u></strong> We accept no responsibility or liability for any ratings or reviews of an employee posted to the Product, or any consequences as a result of the ratings or reviews of an employee, including but not limited to termination of an employee. Ratings and reviews posted to the Product DO NOT reflect our views. </p>
+					<br>
+					<p><strong><u>Monitoring: </u></strong>We do not accept any liability for monitoring the Website or for unauthorized or unlawful content on the Website or use of the Website by users.</p>
+					<br>
+					<p><strong><u>No warranty as to non-infringement:</u></strong> Except in the manner provided for in these Terms, we disclaim, and expressly do not provide any direct or indirect, express or implied representation or warranty as to title and non-infringement of intellectual property in relation to the Product.</p>
+					<br>
+					<p><strong><u>Damage to hardware: </u></strong>Any material downloaded or otherwise obtained through the use of our services and products is done at your own discretion and risk, and You will be solely responsible for any damage to your computer system or other device or loss of data that results from the download of any such material. </p>
+					<br>
+					<p><strong><u>Content provided to companies:</u></strong> If You are an individual providing User Data that is to be directed to your organization’s account, You agree and acknowledge that we accept no responsibility and are not liable for any damages that may arise by the organization’s use of that User Data. You further agree and acknowledge that we are not liable for any damages that may arise if the User Data is misdirected to the wrong organization due to any reason, including error on your part or a flaw in the Product.</p>
+					<br>
+				<h5>DATA RETENTION </h5>
+					<p>The Product may store your data as long as your account is current and active and for <strong> <i>thirty (30) </i></strong>days after our relationship with You has been terminated. <p>
+					<br>
+					<p>On a regular basis we create a backup of all data in our system, which is retained for <strong><i>thirty (30)</i></strong> days, after which it will be removed permanently from all our systems. This backup is for use by <strong><i>Chez Dine</i></strong> only in the case of disaster recovery or to maintain business operations in the case of an emergency. <strong><i>Chez Dine </i></strong> will not restore data unless it determines, in its sole discretion that a data recovery is necessary. </p>
+					<br>
+				<h5>REFUND POLICY </h5>
+					<p>We are unable to provide refunds for a subscription to a plan.</p>
+					<br>
+				<h5>LIMITATION OF LIABILITY</h5>
+					<p>You hereby agree to release, remise and forever discharge us and our directors, employees, officers, and our affiliates, partners, service providers, vendors, and contractors and each of their respective agents, directors, officers, employees, and all other related persons or entities from any and all manner of rights, losses, costs, claims, complaints, demands, debts, damages, causes of action, proceedings, liabilities, obligations, legal fees, costs and disbursements of any nature whatsoever, and for any special, indirect or consequential, incidental or exemplary damages (collectively, a “<strong>Claim</strong>”), whether in contract or tort, whether known or unknown, which now or hereafter arise from, to the maximum extent allowed by law, that relate to, or are connected with:<p>
+				<ol class="alphabetList" type="a">
+					<li>any indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use data, or other intangible losses;</li>
+					<li>your provision of any personal information provided to us subject to our legal requirements relating to the protection of personal information;</li>
+					<li>communications received to you through your access to the Product;</li>
+					<li>the posting of information on the Product, Website, blog, account or any affiliated social media, including but not limited to, User data, Cards, written reviews, pictures, or personal information;</li>
+					<li>the use of the Product and any related applications including third party services; </li>
+					<li>the use of any software related to the Product; </li>
+					<li>viruses, spyware, service provider failures or internet access interruptions; </li>
+					<li>loss of use, loss of data, inaccuracy of data, payment failure, payment defect, inaccurate calculations, downtime, identity theft, fraud or unauthorized access; or </li>
+					<li>any content relating to the use of the Product, </li>
+				</ol>
+				<br>
+					<p>even if you have been advised of the possibility of such Claim, or such Claim was reasonably foreseeable and notwithstanding the sufficiency or insufficiency of any remedy provided for herein or in any license. </p>
+					<br>
+					<p>In the event that we become liable for any damages whatsoever, you agree that such damages shall be limited in the aggregate to the amount of fees or charges which You have paid for the Product in the previous invoice. </p>
+					<br>
+				<h5>INDEMNIFICATION</h5>
+					<p>To the extent permitted by applicable laws, You agree that You will defend, indemnify and hold harmless us and our officers, directors, shareholders, employees, agents and representatives, from and against any and all damages, judgments, liability, costs and expenses (including without limitation any reasonable legal fees), in whole or in part arising out of or attributable to: (a) generally, your breach of these Terms; your access to and/or use of the Product; and any loss of, or damage to, any property, or injury to, or death of, any person (including you) caused by your access to and/or use of the Product; and (b) specifically, your breach of the intellectual property rights of any third party to these Terms.</p>
+					<br>
+					<p>You agree that You will be solely responsible for all activities that occur under your account, whether You are aware of them or not. You agree to hold us harmless and release us from any loss or liability whatsoever that You may incur as a result of someone other than You using your password or account, either with or without your knowledge. You agree to indemnify us for any damages, third party claims or liabilities whatsoever that we may incur as a result of activities that occur on or through your account, whether or not You were directly or personally responsible. </p>
+					<br>
+				<h5>GOVERNING LAW AND FORUM OF DISPUTES</h5>
+					<p>By visiting the Website or using the Product, You agree that the laws of the province of Ontario, without regard to the principles of conflict of laws, will govern these Terms and any dispute of any sort that may arise between You and us. With respect to any disputes or claims, You agree not to commence or prosecute any action in connection therewith other than in the province of Ontario, and You hereby consent to, and waive all defenses of lack of personal jurisdiction and<i> forum non conveniens </i>with respect to venue and jurisdiction in the provincial courts of<strong><i> Ontario </i></strong>. You agree to pay reasonable attorneys' fees and court costs incurred by us to collect any unpaid amounts owed by You.  </p>
+					<br>
+					<p><strong><u>Expenses:</u></strong> Each party shall be responsible for its own legal fees and other expenses incurred in connection with the performance of any of its obligations hereunder.</p>
+					<br>
+				<h5>FORCE MAJEURE</h5>
+					<p>You agree that we are not liable for a delay or failure in performance of the Product or the provisions of these Terms caused by reason of any occurrence of unforeseen events beyond our reasonable control, including but not limited to, acts of God, natural disasters, power failures, server failures, third party service provider failures or service interruptions, embargo, labour disputes, lockouts and strikes, riots, war, floods, insurrections, legislative changes, and governmental actions.</p>
+					<br>
+				<h5>SEVERABILITY</h5>
+					<p>If any portion of these Terms is deemed unlawful, void or unenforceable by any arbitrator or court of competent jurisdiction, these Terms as a whole shall not be deemed unlawful, void or unenforceable, but only that portion of these Terms that is unlawful, void or unenforceable shall be stricken from these Terms.   </p>
+					<br>
+				<h5>HEADINGS </h5>
+					<p>The insertions of headings are for convenient reference only and are not to affect the interpretation of these Terms.</p>
+					<br>
+				<h5>ASSIGNMENT OF AGREEMENT </h5>
+					<p>You may not, without our prior written consent, assign the Agreement, in whole or in part, either voluntarily or by operation of law, and any attempt to do so will be a material default of the Agreement and will be void. We may assign this Agreement to a third party at any time in our sole discretion. The Agreement will be binding upon and will inure to the benefit of the respective parties hereto, their respective successors in interest, legal representatives, heirs and assigns.</p>
+					<br>
+				<h5>WAIVER</h5>
+					<p>You agree that if we do not exercise or enforce any legal right or remedy which is contained in these Terms or which we have the benefit of under any applicable law, this will not be taken to be a formal waiver of our rights and that those rights or remedies will still be available to us. Waivers must be in written form and signed by an authorized representative of the Company.</p>
+					<br>
+				<h5>SURVIVAL OF AGREEMENT </h5>
+					<p>All covenants, agreements, representations and warranties made in these Terms shall survive your acceptance of these Terms and the termination of our relationship.</p>
+					<br>
+				<h5>ENTIRE AGREEMENT</h5> 
+					<p>The Agreement will constitute the entire agreement between us and You with respect to the subject matter hereof and all prior oral or written agreements, representations or statements with respect to such subject matter are superseded hereby. In the event of a conflict between these Terms and the Privacy Policy, the terms and conditions found herein shall prevail.</p>
+					<br>
+				<h5>CONTACT</h5>
+					<p>By providing us with your e-mail address, You agree to receive all required notices electronically, to that e-mail address or by mobile notifications via the Product. It is your responsibility to update or change that address, as appropriate.</p>
+					<br>
+					<p>If You have any questions or comments regarding these Terms please contact our head office by email at dine@chezdine.com .</p>
+
+
+
+
+		 </li>
+		</ol>
+
+	</div>
+
+
+
+<!-- End Terms and Condition --> 
+<!-- footer -->
+	<div class="footer" id="footer">
+		<div class="contaner">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 contactChezDine">
+					<h4>Contact Us</h4>
+					<p><i class="fa fa-home" aria-hidden="true"></i>  3-231 Main St W , Hamilton ON L8P 1J4</p>
+					<p><i class="fa fa-envelope-open-o" aria-hidden="true"></i> dine@chezdine.com</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> 1(289)921-1789</p>
+					<p><i class="fa fa-globe" aria-hidden="true"></i> www.chezdine.com</p>		
+				</div> 
+			
+				<div class="col-lg-4 col-md-4 aboutChezDine">
+					<h4>About</h4>
+						<p><a href="#"data-toggle="modal" data-target="#popup">FAQ</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Services</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Meet Our Team</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup"> Private Privacy</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Terms & Condition</a></p>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<h4>Stay in touch with us</h4>				
+					<a href = "https://www.facebook.com/chezdine/" target="blank">
+						<i class="social fa fa-facebook-official" aria-hidden="true"></i>
+					</a>
+					<a href="https://twitter.com/chez_dine?lang=en" target="blank">
+						<i class="social fa fa-twitter-square" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.instagram.com/chezdine/" target="blank">
+						<i class="social fa fa-instagram" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.youtube.com/playlist?list=UUAFC-ThxZ4HgS1BaYwlQFWg" target="blank">
+						<i class="social fa fa-youtube-square" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+<!-- end footer -->
+  </body>
+</html>

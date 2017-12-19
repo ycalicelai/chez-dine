@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Sean Davis - Chez Dine Host</title>
+	<!--custom CSS-->
+	<link rel="stylesheet" type="text/css" href="ChezdineCSS/chezdine_style.css">
+	<!--for icons-->
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> 
+    <!-- jQuery library(necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>	
+	<!-- Latest compiled JavaScript -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src=" https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<script>
+		function readMore(){
+			$('.hostProfileComplete').show('1000');
+			$('.hostProfileAbstract a').hide('1000');
+			console.log("showing");
+		}
+		function readLess(){
+			$('.hostProfileAbstract a').show('1000');
+			$('.hostProfileComplete').hide('1000');
+		}
+	</script>
+</head>
+<body>
+	<!-- navigation-->
+	<div id="NavBar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html#header" class="navbar-brand">
+					<img src="images/LogoCDShadowIn.png">
+				</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.html#header">Home</a></li>
+				<li class="hidden-sm"><a href="index.html#AboutUs">About Us</a></li>
+				<li class="hidden-sm"><a href="index.html#chezdineCarousel">Our Community in Action</a></li>
+				<li class="hidden-sm"><a href="index.html#HostProfile">Meet Our Hosts</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a class="EM" data-toggle="modal" data-target="#hostOptions">Becoming a host</a></li>
+				<li><a href="https://chez-dine1.sharetribe.com/en/user_feedbacks/new">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- end Navigation -->
+<!--modal hostOptions -->			
+	<div class="hostOptions">
+		<div class="modal fade" id="hostOptions" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"> &times;</button>
+						<h4>Before registering as a host, please choose one of the following:</h4>	
+					</div>
+						<iframe src="modal.html"></iframe>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<!--end modal hostOptions -->
+<!-- Host Event Pictures -->	
+	<div class="container hostPic">
+		<div class="col-lg-4 col-sm-6 col-xs-7 hostPicItem">	
+			<div class="box1">
+					<img src="images/gallery/20170929_193807.jpg">
+			</div>			
+		</div>
+		<div class="col-lg-4 col-sm-3 col-xs-5 hostPicItem">
+			<div class="box2">
+				<img src="images/gallery/20170929_194313.jpg">
+			</div>			
+		</div>		
+		<div class="col-lg-4 col-sm-3 hostPicItem hidden-xs">
+			<div class="box3">
+					<img src="images/gallery/20170929_192845.jpg">
+			</div>			
+		</div>		
+		<div class="col-lg-4 col-sm-3 col-xs-5 hostPicItem">
+			<div class="box2">
+				<img src="images/gallery/20170929_194313.jpg">
+			</div>			
+		</div>		
+		<div class="col-lg-4 col-sm-3 hostPicItem hidden-xs">
+			<div class="box3">
+					<img src="images/gallery/20170929_192845.jpg">
+			</div>			
+		</div>
+	</div>
+<!-- End Host Event Pictures -->
+
+	<div class="container hostDetails">
+		<div class="row">
+			<div class="col-lg-8 col-sm-12 col-xs-12 col-md-8">
+				<div class="hostInfo">
+	<!-- Host Profile heading -->
+					<div class=" hostProfileHeading">
+						<div class="media">
+							<div class="media-left">
+								<img class="media-object" src="images/SeanDavis.jpg">				
+							</div>
+							<div class="media-body">
+								<div class="media-heading">
+									<h3>Sean Davis</h3>
+									<p><q>A Finance businessman, master chef Canada runner up and Leaf fan! </q></p>
+									<p><a href="#">Hamilton</a></p> <!--put the link directing to the location search -->					
+								</div>					
+							</div>		
+						</div>
+					</div>
+	<!-- End Host Profile heading--> 
+	<!-- Host Profile body -->
+					<div class="hostProfile">
+						<hr>
+						<span class="hostProfileAbstract">
+						Since a young boy I have loved creating in the kitchen. 
+						As a husband, father, businessman like everyone else it’s a busy life. 
+						It’s a good one though when your a leaf fan (at least this year) . 
+						My wife Marla always says cooking for me is my form of yoga. 
+						She’s right, the time in the kitchen for me is very mindful, and warms my heart. 
+						I enjoy creating unique dishes that are fan favourites but with my own little SD flare. 
+						Everything from captain crunch chicken fingers and poutine for the kids to lobster rolls and tenderloin for the big kids. 
+						I can cook a 10 course dinner for 6 or a feast for 60. My speciality is cook for you . 
+						I’m happy to come to you with all supplies, including plates, design a menu that suits your taste and budget. 
+						No kitchen? No problem. I can also cook at your venue of choice. <br>
+						<a href="#hostProfileComplete" onclick=readMore()>Read More</a></span>
+						<span class="hostProfileComplete" id="hostProfileComplete" style="display:none">
+						<br>
+						<a href="#hostProfileAbstract" onclick=readLess()>Read Less</a></span>
+						<br><br>
+						<a href=""> Message Chef</a>
+					</div>
+				</div>		
+			</div>
+			
+	<!-- End Host Profile -->
+	<!-- Host Info and Rules -->
+			<div class=" hostRules col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<div class="media">
+							<div class="media-left">
+								<i class="fa fa-user" aria-hidden="true"></i>				
+							</div>
+							<div class="media-body">
+								<div class="media-heading">
+									<h5>Name</h5>
+									<p>Name of the Host</p>				
+								</div>					
+							</div>										
+						</div>	
+
+						<div class="media">
+							<div class="media-left">
+								<i class="fa fa-map-marker" aria-hidden="true"></i>				
+							</div>
+							<div class="media-body">
+								<div class="media-heading">
+									<h5>Location</h5>
+									<p>Hamilton</p> 				
+								</div>					
+							</div>										
+						</div>	
+
+						<div class="media">
+							<div class="media-left">
+								<i class="fa fa-language" aria-hidden="true"></i>				
+							</div>
+							<div class="media-body">
+								<div class="media-heading">
+									<h5>Language</h5>
+									<p>English, Spanish, French</p>					
+								</div>					
+							</div>										
+						</div>									
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<div class="media">
+							<div class="media-left">
+								<i class="fa fa-smile-o" aria-hidden="true"></i>				
+							</div>
+							<div class="media-body">
+								<div class="media-heading">
+									<h5>Review Rating</h5>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>				
+								</div>					
+							</div>										
+						</div>	
+									
+						<div class="media">
+							<div class="media-left">
+								<i class="fa fa-cutlery" aria-hidden="true"></i>				
+							</div>
+							<div class="media-body">
+								<div class="media-heading">
+									<h5>meal Types</h5>
+									<p>Brunch, Dinner</p>				
+								</div>					
+							</div>										
+						</div>	
+
+						<div class="media">
+							<div class="media-left">
+								<i class="fa fa-users" aria-hidden="true"></i>				
+							</div>
+							<div class="media-body">
+								<div class="media-heading">
+									<h5>Guest</h5>
+									<p>2-5 people</p>				
+								</div>					
+							</div>										
+						</div>	
+																		
+					</div>
+							
+				</div>
+						 
+			</div> 
+	<!-- end Host Info and Rules -->													
+		</div>
+	</div>
+
+
+
+
+<!--Map ???????????????????????-->
+	<div class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2905.3852195453574!2d-79.86801968509317!3d43.264304885509624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1510598923675" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+<!-- End Map -->
+<!-- Host Reviews -->
+	<div class="hostStarRating">
+		<h4>OverAll</h4>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<hr>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="panel panel-default">
+					  <div class="panel-heading">Friendiness</div>
+					  <div class="panel-body">
+					  		<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+					  </div>
+					</div>
+				</div>
+				
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="panel panel-default">
+					  <div class="panel-heading">Cleanliness</div>
+					  <div class="panel-body">
+					  		<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+					  </div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="panel panel-default">
+					  <div class="panel-heading">Value</div>
+					  <div class="panel-body">
+					  		<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+					  </div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="panel panel-default">
+					  <div class="panel-heading">Taste</div>
+					  <div class="panel-body">
+					  		<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+					  </div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>		
+	
+
+	<div class="hostReviews">
+		<h2>Five Most Recent Reviews For The Host</h2>
+		<div class="hostReview1">		
+			<div class="media">
+				<div class="media-object media-left">
+					<img class="media-object" src="images/anon.jpg">				
+				</div>
+				<div class="media-body">
+					<div class="media-heading">
+						<h5>Name1, Toronto</h5>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>					
+					</div>	
+					<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+					Aenean massa.<br>
+					<a data-toggle="modal" data-target="#hostReview1Modal">Read More</a></span>
+				</div>										
+			</div>
+	
+			<div class="modal" role="dialog" id="hostReview1Modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<div class="media">
+								<div class="media-object media-left">
+									<img class="media-object" src="images/anon.jpg">				
+								</div>
+								<div class="media-body">
+									<div class="media-heading">
+										<h5>Name1, Toronto</h5>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>					
+									</div>					
+								</div>										
+							</div>
+						</div>
+						<div class="modal-body">
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+							Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+							Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet 
+							a, venenatis vitae, justo.<br></p>
+						</div>
+					</div>	
+				</div>		
+			</div>
+		</div>
+		
+		
+		<div class="hostReview2">		
+			<div class="media">
+				<div class="media-object media-left">
+					<img class="media-object" src="images/anon.jpg">				
+				</div>
+				<div class="media-body">
+					<div class="media-heading">
+						<h5>Name2, Toronto</h5>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>					
+					</div>	
+
+					<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+					Aenean massa.<br>
+					<a data-toggle="modal" data-target="#hostReview2Modal">Read More</a></span>
+
+				</div>										
+			</div>
+	
+			<div class="modal" role="dialog" id="hostReview2Modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<div class="media">
+								<div class="media-object media-left">
+									<img class="media-object" src="images/anon.jpg">				
+								</div>
+								<div class="media-body">
+									<div class="media-heading">
+										<h5>Name2, Toronto</h5>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>					
+									</div>					
+								</div>										
+							</div>
+						</div>
+						<div class="modal-body">
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+							Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+							Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet 
+							a, venenatis vitae, justo.<br></p>
+						</div>
+					</div>	
+				</div>		
+			</div>
+		</div>
+	
+		<div class="hostReview3">		
+			<div class="media">
+				<div class="media-object media-left">
+					<img class="media-object" src="images/anon.jpg">				
+				</div>
+				<div class="media-body">
+					<div class="media-heading">
+						<h5>Name3, Toronto</h5>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>					
+					</div>	
+
+					<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+					Aenean massa.<br>
+					<a data-toggle="modal" data-target="#hostReview3Modal">Read More</a></span>
+				</div>										
+			</div>
+	
+			<div class="modal" role="dialog" id="hostReview3Modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<div class="media">
+								<div class="media-object media-left">
+									<img class="media-object" src="images/anon.jpg">				
+								</div>
+								<div class="media-body">
+									<div class="media-heading">
+										<h5>Name3, Toronto</h5>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>					
+									</div>					
+								</div>										
+							</div>
+						</div>
+						<div class="modal-body">
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+							Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+							Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet 
+							a, venenatis vitae, justo.<br></p>
+						</div>
+					</div>	
+				</div>		
+			</div>
+		</div>
+	
+	
+		<div class="hostReview4">		
+			<div class="media">
+				<div class="media-object media-left">
+					<img class="media-object" src="images/anon.jpg">				
+				</div>
+				<div class="media-body">
+					<div class="media-heading">
+						<h5>Name4, Toronto</h5>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>					
+					</div>	
+
+						<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+						Aenean massa.<br>
+						<a data-toggle="modal" data-target="#hostReview4Modal">Read More</a></span>
+
+				</div>										
+			</div>
+	
+			<div class="modal" role="dialog" id="hostReview4Modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<div class="media">
+								<div class="media-object media-left">
+									<img class="media-object" src="images/anon.jpg">				
+								</div>
+								<div class="media-body">
+									<div class="media-heading">
+										<h5>Name4, Toronto</h5>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>					
+									</div>					
+								</div>										
+							</div>
+						</div>
+						<div class="modal-body">
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+							Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+							Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet 
+							a, venenatis vitae, justo.<br></p>
+						</div>
+					</div>	
+				</div>		
+			</div>
+		</div>
+	
+	
+		<div class="hostReview5">		
+			<div class="media">
+				<div class="media-object media-left">
+					<img class="media-object" src="images/anon.jpg">				
+				</div>
+				<div class="media-body">
+					<div class="media-heading">
+						<h5>Name5, Toronto</h5>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>					
+					</div>	
+					<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+					Aenean massa.<br>
+					<a data-toggle="modal" data-target="#hostReview5Modal">Read More</a></span>
+				</div>										
+			</div>
+	
+			<div class="modal" role="dialog" id="hostReview5Modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<div class="media">
+								<div class="media-object media-left">
+									<img class="media-object" src="images/anon.jpg">				
+								</div>
+								<div class="media-body">
+									<div class="media-heading">
+										<h5>Name5, Toronto</h5>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>					
+									</div>					
+								</div>										
+							</div>
+						</div>
+						<div class="modal-body">
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+							Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+							Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+							Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet 
+							a, venenatis vitae, justo.<br></p>
+						</div>
+					</div>	
+				</div>		
+			</div>
+		</div>
+		<br><br>
+		<p style="text-align: right;"><a href="#" > See all the reviews</a> <p><!-- link to sharetribe's host review page -->
+	</div>
+<!--End Host Reviews -->
+<!-- footer -->
+	<div class="footer" id="footer">
+		<div class="contaner">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 contactChezDine">
+					<h4>Contact Us</h4>
+					<p><i class="fa fa-home" aria-hidden="true"></i>  245 James Street North, Hamilton, ON </p>
+					<p><i class="fa fa-envelope-open-o" aria-hidden="true"></i> dine@chezdine.com</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> 1(289)921-1789</p>
+					<p><i class="fa fa-globe" aria-hidden="true"></i> www.chezdine.com</p>		
+				</div> 
+			
+				<div class="col-lg-4 col-md-4 aboutChezDine">
+					<h4>About</h4>
+						<p><a href="FAQ.html">FAQ</a></p>
+						<p><a href="services.html">Services</a></p>
+						<p><a href="privatePolicy.html"> Private Privacy</a></p>
+						<p><a href="TermsCondition.html">Terms & Condition</a></p>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<h4>Stay in touch with us</h4>				
+					<a href = "https://www.facebook.com/chezdine/" target="blank">
+						<i class="social fa fa-facebook-official" aria-hidden="true"></i>
+					</a>
+					<a href="https://twitter.com/chez_dine?lang=en" target="blank">
+						<i class="social fa fa-twitter-square" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.instagram.com/chezdine/" target="blank">
+						<i class="social fa fa-instagram" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.youtube.com/playlist?list=UUAFC-ThxZ4HgS1BaYwlQFWg" target="blank">
+						<i class="social fa fa-youtube-square" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+<!-- end footer -->
+
+  </body>
+</html>

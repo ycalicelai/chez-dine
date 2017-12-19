@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Chez Dine</title>
+	<!--custom CSS-->
+	<link rel="stylesheet" type="text/css" href="ChezdineCSS/chezdine_style.css">
+	<!--for icons-->
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> 
+    <!-- jQuery library(necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>	
+	<!-- Latest compiled JavaScript -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src=" https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<style>
+	.meet-founder{
+		margin: 80px 0px;
+	}
+
+	.teamPhoto{
+		width: 150px;
+		height:150px;
+		display
+	}
+	</style>
+	
+</head>
+<body>
+	<!-- navigation-->
+	<div id="NavBar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#CDNavBar" aria-expanded="false">
+					<span class="sr-only">Toggle Navigation Bar</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html#header" class="navbar-brand">
+					<img src="images/LogoCDWB.png">
+				</a>
+			</div>
+			<div class="navbar-collapse collapse" id="CDNavBar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html#header">Home<span class="sr-only">Current Page</span></a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> About Chez Dine<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="index.html#AboutUs" target="_self">About Us</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#popup">Services</a></li>
+								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="teamMembers.html" target="_blank">Our Team</a></li>
+								<li><a href="#" data-toggle="modal" data-target="#popup"><i class="fa fa-question-circle-o" aria-hidden="true"></i>&nbsp; FAQ &nbsp;<i class="fa fa-question-circle-o" aria-hidden="true"></i></a></li>
+							</ul>
+					</li>
+					<li><a href="#" data-toggle="modal" data-target="#popup">Blog</a></li>
+					<li><a class="EM" data-toggle="modal" data-target="#popup">Becoming a host</a></li>
+					<!--<li><a class="EM" data-toggle="modal" data-target="#hostOptions">Becoming a host</a></li>-->
+					<li><a href="https://chez-dine1.sharetribe.com/en/user_feedbacks/new">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- end Navigation -->
+
+	<div class="popup">
+		<div class="modal fade" id="popup" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"> &times;</button>
+						<h4>Thank you for visiting Chez Dine</h4>
+					</div>
+					<div class="modal-body">
+						<p>We are still busy putting the final touches on our site. 
+						Please email us at <strong>dine@chezdine.com</strong> for more information and personal service.
+						Thank you for your patience.</p>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+<!--modal hostOptions -->			
+	<div class="hostOptions">
+		<div class="modal fade" id="hostOptions" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"> &times;</button>
+						<h4>Before registering as a host, please choose one of the following:</h4>	
+					</div>
+						<iframe src="modal.html"></iframe>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<!--end modal hostOptions -->
+
+<!-- Meet the founder -->
+	<div class="container meet-founder">
+		<h2>Meet our Team</h2>
+		<br>
+	  <div class="row">
+		<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+					<img src="images/Jen.png" class="img-responsive" width="360px">							</div>
+
+	  
+		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7" style="text-align: left;">
+			<h4>A note from our Founder, Jen Stokes</h4>
+			<p>Two years ago, I had the idea of delving into the sharing economy. 
+			At the time, I was juggling  four jobs in the hospitality industry and simultaneously airbnbing my apartment. 
+			And then it came to me, what Uber is to transportation and Airbnb is to accommodation, 
+			Chez Dine could be to food. That year I purchased the domain name and chipped away at Chez Dine 
+			while juggling my other commitments. </p>
+			
+			<p>In January of 2017, the idea came to fruition when we hosted our first dinner. 
+			Since then we have over 50 hosts and have served over 400 customers. 
+			Chez Dine specializes in everything from small intimate home gatherings to private and corporate events. </p>
+			
+			<p>Essentially Chez Dine started as a way for neighbors to become more than neighbours, 
+			and for a community to grow over one of the most common forms of socialization, food. 
+			Chez Dine is about a taste of togetherness, no matter your creed or orientation, 
+			food equalizes us all. I knew that to make Chez Dine a success, I needed to connect with new startups 
+			and like minded people that could give me the insight I was lacking. I applied to the Forge, 
+			had a three-person panel interview and pitched my vision for Chez Dine. </p>
+
+			<p>As a woman entrepreneur, there were more advantages than disadvantages. 
+			We are compassionate and emotionally empathetic, both virtues that are needed in something as fragile as the sharing economy.</p>
+			
+			<p>Becoming an entrepreneur can be lonely, the doubts can creep in and cripple you but The Forge, 
+			is a community of like-minded, limitless people who share and lift each other up.
+			As a woman I can provide a layered approach to a problem, and for me, the men in The Forge provide 
+			experience that I am lacking. Since becoming a member at the Forge, I was introduced to business 
+			opportunities that I would not have known about otherwise, The Forge has exposed me to educational 
+			startup programs. The Forge offered mentorship, coaching and everything needed to know about starting 
+			a new business. </p>
+
+			<p>Now Chez Dine is at the seed investment stage, where we will be launching our online marketplace . 
+			We are currently seeking investors to scale our vision. We are confident in our growing team and community.</p>
+		  </div>
+		</div>
+	</div>
+<!--End Meet the founder -->
+	<h2>Our Team Members</h2>
+<!-- Team Memebers -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4>Alice</h4>
+						<p> Website Developer</p>
+					</div>
+					<div class="panel-body">
+						<img src="images/alice.jpg"class="img-responsive teamPhoto img-circle center-block">
+						<blockquote>Chez Dine, apart from offering a Taste of Togetherness to our guests and hosts, 
+						provides me lots of opportunities to learn and grow!</blockquote>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4>Jenny</h4>
+						<p> Website Developer</p>
+					</div>
+					<div class="panel-body">
+						<img>
+						<blockquote>Jenny has background in Human Resources, Logistics and Supply Operations and has worked
+						in  semiconductor companies for several years before moving to Canada. Continuous learning has always 
+						been her priority and meeting and engaging with people and of course, sampling new foods has always been 
+						her interest! </blockquote>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-sm-4 col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4>CTO</h4>
+					</div>
+					<div class="panel-body">
+						<img>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- End Team Members -->
+
+<!-- footer -->
+	<div class="footer" id="footer">
+		<div class="contaner">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 contactChezDine">
+					<h4>Contact Us</h4>
+					<p><i class="fa fa-home" aria-hidden="true"></i>  3-231 Main St W , Hamilton ON L8P 1J4</p>
+					<p><i class="fa fa-envelope-open-o" aria-hidden="true"></i> dine@chezdine.com</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> 1(289)921-1789</p>
+					<p><i class="fa fa-globe" aria-hidden="true"></i> www.chezdine.com</p>		
+				</div> 
+			
+				<div class="col-lg-4 col-md-4 aboutChezDine">
+					<h4>About</h4>
+						<p><a href="#"data-toggle="modal" data-target="#popup">FAQ</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Services</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Meet Our Team</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup"> Private Privacy</a></p>
+						<p><a href="#"data-toggle="modal" data-target="#popup">Terms & Condition</a></p>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<h4>Stay in touch with us</h4>				
+					<a href = "https://www.facebook.com/chezdine/" target="blank">
+						<i class="social fa fa-facebook-official" aria-hidden="true"></i>
+					</a>
+					<a href="https://twitter.com/chez_dine?lang=en" target="blank">
+						<i class="social fa fa-twitter-square" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.instagram.com/chezdine/" target="blank">
+						<i class="social fa fa-instagram" aria-hidden="true"></i>
+					</a>
+					<a href="https://www.youtube.com/playlist?list=UUAFC-ThxZ4HgS1BaYwlQFWg" target="blank">
+						<i class="social fa fa-youtube-square" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+<!-- end footer -->
+</body>
+</html>
